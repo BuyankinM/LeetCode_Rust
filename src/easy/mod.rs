@@ -2,3 +2,8 @@ pub mod task_01446;
 pub mod task_01450;
 pub mod task_01455;
 pub mod task_01460;
+pub mod task_01464;
+pub mod task_01470;
+pub mod task_01475;
+pub mod task_01480;
+pub mod task_01486;
