@@ -40,11 +40,17 @@ mod tests {
 
     #[test]
     fn test_2() {
-        assert_eq!("ubvpw".to_owned(), Solution::modify_string("ubv?w".to_owned()));
+        assert_eq!(
+            "ubvpw".to_owned(),
+            Solution::modify_string("ubv?w".to_owned())
+        );
     }
 
     #[test]
     fn test_3() {
-        assert_eq!("jdqgacb".to_owned(), Solution::modify_string("j?qg??b".to_owned()));
+        assert_eq!(
+            "jdqgacb".to_owned(),
+            Solution::modify_string("j?qg??b".to_owned())
+        );
     }
 }

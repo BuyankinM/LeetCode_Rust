@@ -24,7 +24,7 @@ impl Solution {
     pub fn get_concatenation_append(mut nums: Vec<i32>) -> Vec<i32> {
         nums.append(&mut nums.clone());
         nums
-    } 
+    }
 }
 
 #[cfg(test)]
@@ -62,7 +62,7 @@ mod tests {
             Solution::get_concatenation_cycle(vec![1, 3, 2, 1])
         );
     }
-    
+
     #[test]
     fn test_5() {
         assert_eq!(

@@ -8,7 +8,7 @@ impl Solution {
         use std::iter;
         let mut carry = 0;
         let mut cur_sum = 0;
-        
+
         let mut char_vec = a
             .as_bytes()
             .iter()

@@ -52,16 +52,25 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(vec![4,2,4,2,3], Solution::final_prices(vec![8,4,6,2,3]));
+        assert_eq!(
+            vec![4, 2, 4, 2, 3],
+            Solution::final_prices(vec![8, 4, 6, 2, 3])
+        );
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(vec![1,2,3,4,5], Solution::final_prices_simple(vec![1,2,3,4,5]));
+        assert_eq!(
+            vec![1, 2, 3, 4, 5],
+            Solution::final_prices_simple(vec![1, 2, 3, 4, 5])
+        );
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(vec![9,0,1,6], Solution::final_prices_stack(vec![10,1,1,6]));
+        assert_eq!(
+            vec![9, 0, 1, 6],
+            Solution::final_prices_stack(vec![10, 1, 1, 6])
+        );
     }
 }

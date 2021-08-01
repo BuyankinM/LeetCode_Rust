@@ -10,15 +10,14 @@ struct UndergroundSystem {
 }
 
 impl UndergroundSystem {
-
     fn new() -> Self {
         Default::default()
     }
-    
+
     fn check_in(&mut self, id: i32, station_name: String, t: i32) {
         self.checkins.insert(id, (station_name, t));
     }
-    
+
     fn check_out(&mut self, id: i32, station_name: String, t: i32) {
         if let Some((start_station, start_t)) = self.checkins.get(&id) {
             let travel = self
@@ -29,7 +28,7 @@ impl UndergroundSystem {
             travel.1 += 1;
         }
     }
-    
+
     fn get_average_time(&self, start_station: String, end_station: String) -> f64 {
         if let Some(&(total, len)) = self.travels.get(&(start_station, end_station)) {
             return f64::from(total) / len as f64;

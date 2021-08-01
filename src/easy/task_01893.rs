@@ -37,16 +37,25 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::is_covered(vec![vec![1,2],vec![3,4],vec![5,6]], 2, 5));
+        assert_eq!(
+            true,
+            Solution::is_covered(vec![vec![1, 2], vec![3, 4], vec![5, 6]], 2, 5)
+        );
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(false, Solution::is_covered(vec![vec![1,10],vec![10,20]], 21, 21));
+        assert_eq!(
+            false,
+            Solution::is_covered(vec![vec![1, 10], vec![10, 20]], 21, 21)
+        );
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(true, Solution::is_covered_line_sweep(vec![vec![1,50]], 1, 50));
+        assert_eq!(
+            true,
+            Solution::is_covered_line_sweep(vec![vec![1, 50]], 1, 50)
+        );
     }
 }

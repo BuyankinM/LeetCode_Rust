@@ -22,17 +22,22 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(vec![1,3,6,10], Solution::running_sum(vec![1,2,3,4]));
+        assert_eq!(vec![1, 3, 6, 10], Solution::running_sum(vec![1, 2, 3, 4]));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(vec![1,2,3,4,5], Solution::running_sum(vec![1,1,1,1,1]));
+        assert_eq!(
+            vec![1, 2, 3, 4, 5],
+            Solution::running_sum(vec![1, 1, 1, 1, 1])
+        );
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(vec![3,4,6,16,17], Solution::running_sum(vec![3,1,2,10,1]));
+        assert_eq!(
+            vec![3, 4, 6, 16, 17],
+            Solution::running_sum(vec![3, 1, 2, 10, 1])
+        );
     }
 }
-

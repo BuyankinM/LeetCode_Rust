@@ -49,6 +49,9 @@ mod tests {
 
     #[test]
     fn test_3() {
-        assert_eq!(23, Solution::max_sub_array_kadanes_algo(vec![5, 4, -1, 7, 8]));
+        assert_eq!(
+            23,
+            Solution::max_sub_array_kadanes_algo(vec![5, 4, -1, 7, 8])
+        );
     }
 }

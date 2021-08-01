@@ -43,6 +43,9 @@ mod tests {
 
     #[test]
     fn test_2() {
-        assert_eq!(true, Solution::three_consecutive_odds_optimal(vec![1,2,34,3,4,5,7,23,12]));
+        assert_eq!(
+            true,
+            Solution::three_consecutive_odds_optimal(vec![1, 2, 34, 3, 4, 5, 7, 23, 12])
+        );
     }
 }

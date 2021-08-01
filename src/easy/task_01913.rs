@@ -29,7 +29,7 @@ impl Solution {
                 _ => (),
             };
         });
-        
+
         max_1 * max_2 - min_1 * min_2
     }
 }

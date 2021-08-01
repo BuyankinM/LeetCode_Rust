@@ -35,16 +35,16 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(4, Solution::num_identical_pairs(vec![1,2,3,1,1,3]));
+        assert_eq!(4, Solution::num_identical_pairs(vec![1, 2, 3, 1, 1, 3]));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(6, Solution::num_identical_pairs(vec![1,1,1,1]));
+        assert_eq!(6, Solution::num_identical_pairs(vec![1, 1, 1, 1]));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(0, Solution::num_identical_pairs_func(vec![1,2,3]));
+        assert_eq!(0, Solution::num_identical_pairs_func(vec![1, 2, 3]));
     }
 }

@@ -87,7 +87,7 @@ impl Solution {
         let mut l2 = l2;
         let mut lsmall = &mut result;
         let lbig = &mut l2;
-        
+
         while lbig.is_some() {
             if lsmall.is_none() || lsmall.as_ref()?.val > lbig.as_ref()?.val {
                 mem::swap(lsmall, lbig);

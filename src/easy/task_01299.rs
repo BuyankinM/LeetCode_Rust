@@ -65,12 +65,14 @@ mod tests {
             Solution::replace_elements(vec![17, 18, 5, 4, 6, 1, 100, 200, 300, 400, 2, 3, 11])
         );
     }
-    
+
     #[test]
     fn test_4() {
         assert_eq!(
             vec![400, 400, 400, 400, 400, 400, 400, 400, 400, 11, 11, 11, -1],
-            Solution::replace_elements_functional(vec![17, 18, 5, 4, 6, 1, 100, 200, 300, 400, 2, 3, 11])
+            Solution::replace_elements_functional(vec![
+                17, 18, 5, 4, 6, 1, 100, 200, 300, 400, 2, 3, 11
+            ])
         );
     }
 }

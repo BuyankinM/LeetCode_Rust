@@ -88,6 +88,9 @@ mod tests {
 
     #[test]
     fn test_3() {
-        assert_eq!(true, Solution::is_path_crossing_best("NESWEWEWEWESNSN".to_owned()));
+        assert_eq!(
+            true,
+            Solution::is_path_crossing_best("NESWEWEWEWESNSN".to_owned())
+        );
     }
 }

@@ -72,7 +72,7 @@ mod tests {
     fn test_3() {
         assert_eq!(0, Solution::count_triples(1));
     }
-    
+
     #[test]
     fn test_4() {
         assert_eq!(330, Solution::count_triples(250));

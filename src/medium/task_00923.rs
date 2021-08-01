@@ -1,13 +1,12 @@
 // 923. 3Sum With Multiplicity
 // https://leetcode.com/problems/3sum-with-multiplicity/
 
-use std::time::Instant;
 use crate::Solution;
+use std::time::Instant;
 
 const M: i32 = 1_000_000_007;
 
 impl Solution {
-
     pub fn three_sum_multi_bruteforce(arr: Vec<i32>, target: i32) -> i32 {
         let l = arr.len();
         let mut n: i32 = 0;

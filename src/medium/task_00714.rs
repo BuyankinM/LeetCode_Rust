@@ -1,7 +1,7 @@
 // 714. Best Time to Buy and Sell Stock with Transaction Fee
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
-use std::cmp::max;
 use crate::Solution;
+use std::cmp::max;
 
 impl Solution {
     pub fn max_profit(prices: Vec<i32>, fee: i32) -> i32 {

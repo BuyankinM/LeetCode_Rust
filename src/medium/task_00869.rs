@@ -5,9 +5,7 @@ use crate::Solution;
 use std::collections::HashSet;
 
 impl Solution {
-    
     pub fn reordered_power_of2(n: i32) -> bool {
-        
         fn get_hash_bytes_power2() -> HashSet<Vec<u8>> {
             let mut a = 1u64;
             let mut h = HashSet::new();
@@ -19,11 +17,11 @@ impl Solution {
             }
             h
         }
-        
+
         let h = get_hash_bytes_power2();
         let mut nb = n.to_string().clone().into_bytes();
         nb.sort_unstable();
-        
+
         h.contains(&nb)
     }
 }

@@ -1,7 +1,7 @@
 //417. Pacific Atlantic Water Flow
 //https://leetcode.com/problems/pacific-atlantic-water-flow/
-use std::collections::VecDeque;
 use crate::Solution;
+use std::collections::VecDeque;
 
 impl Solution {
     pub fn pacific_atlantic(matrix: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

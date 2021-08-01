@@ -42,7 +42,7 @@ mod tests {
     fn test_3() {
         assert_eq!(5, Solution::max_power("triplepillooooow".to_owned()));
     }
-    
+
     #[test]
     fn test_4() {
         assert_eq!(11, Solution::max_power("hooraaaaaaaaaaay".to_owned()));

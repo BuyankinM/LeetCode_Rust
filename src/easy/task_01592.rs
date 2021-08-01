@@ -56,5 +56,4 @@ mod tests {
             Solution::reorder_spaces("  walks  udp package   into  bar a".to_owned())
         );
     }
-
 }

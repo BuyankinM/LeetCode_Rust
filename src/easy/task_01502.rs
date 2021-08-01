@@ -31,12 +31,17 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::can_make_arithmetic_progression(vec![3,5,1]));
+        assert_eq!(
+            true,
+            Solution::can_make_arithmetic_progression(vec![3, 5, 1])
+        );
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(false, Solution::can_make_arithmetic_progression_hashset(vec![1,2,4]));
+        assert_eq!(
+            false,
+            Solution::can_make_arithmetic_progression_hashset(vec![1, 2, 4])
+        );
     }
 }
-
