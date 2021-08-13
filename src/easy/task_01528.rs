@@ -22,7 +22,7 @@ impl Solution {
             out[indices[i] as usize] = s.chars().nth(i).unwrap();
         }
 
-        return out.into_iter().collect();
+        out.into_iter().collect()
     }
 
     pub fn restore_string_2(s: String, indices: Vec<i32>) -> String {

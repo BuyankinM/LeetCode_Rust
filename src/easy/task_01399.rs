@@ -19,7 +19,7 @@ impl Solution {
         let mut arr_groups = [0; 37]; // 9999 - 36 max sum
         let mut max_group = 0;
 
-        (1..=n as usize).map(|x| sum_dig(x)).for_each(|x| {
+        (1..=n as usize).map(sum_dig).for_each(|x| {
             arr_groups[x] += 1;
             max_group = max_group.max(arr_groups[x]);
         });

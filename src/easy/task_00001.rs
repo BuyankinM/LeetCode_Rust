@@ -8,8 +8,8 @@ impl Solution {
         let n: usize = nums.len();
         for i in 0..(n - 1) {
             let elem = target - nums[i];
-            for j in (i + 1)..n {
-                if nums[j] == elem {
+            for (j, val) in nums.iter().enumerate().skip(i + 1) {
+                if *val == elem {
                     return vec![i as i32, j as i32];
                 }
             }

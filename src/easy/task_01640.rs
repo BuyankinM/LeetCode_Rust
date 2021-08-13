@@ -30,30 +30,30 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::can_form_array(vec![85], vec![vec![85]]));
+        assert!(Solution::can_form_array(vec![85], vec![vec![85]]));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            true,
-            Solution::can_form_array(vec![15, 88], vec![vec![88], vec![15]])
-        );
+        assert!(Solution::can_form_array(
+            vec![15, 88],
+            vec![vec![88], vec![15]]
+        ));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            false,
-            Solution::can_form_array(vec![49, 18, 16], vec![vec![16, 18, 49]])
-        );
+        assert!(!Solution::can_form_array(
+            vec![49, 18, 16],
+            vec![vec![16, 18, 49]]
+        ));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(
-            true,
-            Solution::can_form_array(vec![91, 4, 64, 78], vec![vec![78], vec![4, 64], vec![91]])
-        );
+        assert!(Solution::can_form_array(
+            vec![91, 4, 64, 78],
+            vec![vec![78], vec![4, 64], vec![91]]
+        ));
     }
 }

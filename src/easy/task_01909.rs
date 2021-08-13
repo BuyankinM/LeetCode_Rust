@@ -30,31 +30,31 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::can_be_increasing(vec![1, 2, 10, 5, 7]));
+        assert!(Solution::can_be_increasing(vec![1, 2, 10, 5, 7]));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(false, Solution::can_be_increasing(vec![2, 3, 1, 2]));
+        assert!(!Solution::can_be_increasing(vec![2, 3, 1, 2]));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(false, Solution::can_be_increasing(vec![1, 1, 1]));
+        assert!(!Solution::can_be_increasing(vec![1, 1, 1]));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(true, Solution::can_be_increasing(vec![1, 2, 3]));
+        assert!(Solution::can_be_increasing(vec![1, 2, 3]));
     }
 
     #[test]
     fn test_5() {
-        assert_eq!(true, Solution::can_be_increasing(vec![105, 924, 32, 968]));
+        assert!(Solution::can_be_increasing(vec![105, 924, 32, 968]));
     }
 
     #[test]
     fn test_6() {
-        assert_eq!(true, Solution::can_be_increasing(vec![1, 2, 10, 2, 15]));
+        assert!(Solution::can_be_increasing(vec![1, 2, 10, 2, 15]));
     }
 }

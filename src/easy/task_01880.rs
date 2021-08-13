@@ -23,25 +23,28 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::is_sum_equal("acb".to_owned(), "cba".to_owned(), "cdb".to_owned())
-        );
+        assert!(Solution::is_sum_equal(
+            "acb".to_owned(),
+            "cba".to_owned(),
+            "cdb".to_owned()
+        ));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            false,
-            Solution::is_sum_equal("aaa".to_owned(), "a".to_owned(), "aab".to_owned())
-        );
+        assert!(!Solution::is_sum_equal(
+            "aaa".to_owned(),
+            "a".to_owned(),
+            "aab".to_owned()
+        ));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            true,
-            Solution::is_sum_equal("aaa".to_owned(), "a".to_owned(), "aaaa".to_owned())
-        );
+        assert!(Solution::is_sum_equal(
+            "aaa".to_owned(),
+            "a".to_owned(),
+            "aaaa".to_owned()
+        ));
     }
 }

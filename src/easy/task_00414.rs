@@ -55,7 +55,7 @@ impl Solution {
                 third = n;
             }
         }
-        return third.unwrap_or(first.unwrap());
+        third.unwrap_or_else(|| first.unwrap())
     }
 
     pub fn third_max_sort(mut nums: Vec<i32>) -> i32 {

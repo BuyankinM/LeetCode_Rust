@@ -29,7 +29,7 @@ impl Solution {
                 _ => (),
             }
         }
-        return stack.is_empty();
+        stack.is_empty()
     }
 }
 
@@ -39,26 +39,26 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::is_valid("()".to_owned()));
+        assert!(Solution::is_valid("()".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(true, Solution::is_valid("()[]{}".to_owned()));
+        assert!(Solution::is_valid("()[]{}".to_owned()));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(false, Solution::is_valid("(]".to_owned()));
+        assert!(!Solution::is_valid("(]".to_owned()));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(false, Solution::is_valid_eq("([)]".to_owned()));
+        assert!(!Solution::is_valid_eq("([)]".to_owned()));
     }
 
     #[test]
     fn test_5() {
-        assert_eq!(true, Solution::is_valid_eq("{[]}".to_owned()));
+        assert!(Solution::is_valid_eq("{[]}".to_owned()));
     }
 }

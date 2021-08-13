@@ -28,17 +28,13 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::check_if_pangram("thequickbrownfoxjumpsoverthelazydog".to_owned())
-        );
+        assert!(Solution::check_if_pangram(
+            "thequickbrownfoxjumpsoverthelazydog".to_owned()
+        ));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            false,
-            Solution::check_if_pangram_short("leetcode".to_owned())
-        );
+        assert!(!Solution::check_if_pangram_short("leetcode".to_owned()));
     }
 }

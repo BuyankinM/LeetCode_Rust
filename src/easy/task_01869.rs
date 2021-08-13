@@ -29,16 +29,16 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::check_zero_ones("1101".to_owned()));
+        assert!(Solution::check_zero_ones("1101".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(false, Solution::check_zero_ones("111000".to_owned()));
+        assert!(!Solution::check_zero_ones("111000".to_owned()));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(false, Solution::check_zero_ones("110100010".to_owned()));
+        assert!(!Solution::check_zero_ones("110100010".to_owned()));
     }
 }

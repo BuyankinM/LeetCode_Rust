@@ -57,33 +57,33 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::contains_pattern(vec![1, 2, 4, 4, 4, 4], 1, 3)
-        );
+        assert!(Solution::contains_pattern(vec![1, 2, 4, 4, 4, 4], 1, 3));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            true,
-            Solution::contains_pattern(vec![1, 2, 1, 2, 1, 1, 1, 3], 2, 2)
-        );
+        assert!(Solution::contains_pattern(
+            vec![1, 2, 1, 2, 1, 1, 1, 3],
+            2,
+            2
+        ));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            false,
-            Solution::contains_pattern_optimal(vec![1, 2, 1, 2, 1, 3], 2, 3)
-        );
+        assert!(!Solution::contains_pattern_optimal(
+            vec![1, 2, 1, 2, 1, 3],
+            2,
+            3
+        ));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(
-            false,
-            Solution::contains_pattern_optimal(vec![1, 2, 3, 1, 2], 2, 2)
-        );
+        assert!(!Solution::contains_pattern_optimal(
+            vec![1, 2, 3, 1, 2],
+            2,
+            2
+        ));
     }
 }

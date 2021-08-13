@@ -29,24 +29,21 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::halves_are_alike("book".to_owned()));
+        assert!(Solution::halves_are_alike("book".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(false, Solution::halves_are_alike("textbook".to_owned()));
+        assert!(!Solution::halves_are_alike("textbook".to_owned()));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            false,
-            Solution::halves_are_alike("MerryChristmas".to_owned())
-        );
+        assert!(!Solution::halves_are_alike("MerryChristmas".to_owned()));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(true, Solution::halves_are_alike("AbCdEfGh".to_owned()));
+        assert!(Solution::halves_are_alike("AbCdEfGh".to_owned()));
     }
 }

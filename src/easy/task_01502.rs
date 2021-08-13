@@ -15,7 +15,7 @@ impl Solution {
             .all(|(ind, val)| val - arr[ind - 1] == delta)
     }
 
-    pub fn can_make_arithmetic_progression_hashset(ref mut arr: Vec<i32>) -> bool {
+    pub fn can_make_arithmetic_progression_hashset(mut arr: Vec<i32>) -> bool {
         arr.sort_unstable();
         (1..arr.len())
             .map(|i| arr[i] - arr[i - 1])
@@ -31,17 +31,13 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::can_make_arithmetic_progression(vec![3, 5, 1])
-        );
+        assert!(Solution::can_make_arithmetic_progression(vec![3, 5, 1]));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            false,
-            Solution::can_make_arithmetic_progression_hashset(vec![1, 2, 4])
-        );
+        assert!(!Solution::can_make_arithmetic_progression_hashset(vec![
+            1, 2, 4
+        ]));
     }
 }

@@ -33,7 +33,7 @@ impl Solution {
             x /= 10;
         }
 
-        return x == rev_num || x == rev_num / 10; // 3773 => 37==37, 37573 => 37 == (375/10)
+        x == rev_num || x == rev_num / 10 // 3773 => 37==37, 37573 => 37 == (375/10)
     }
 }
 
@@ -43,36 +43,36 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::is_palindrome(121));
+        assert!(Solution::is_palindrome(121));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(false, Solution::is_palindrome(-121));
+        assert!(!Solution::is_palindrome(-121));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(false, Solution::is_palindrome(10));
+        assert!(!Solution::is_palindrome(10));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(true, Solution::is_palindrome(1001));
+        assert!(Solution::is_palindrome(1001));
     }
 
     #[test]
     fn test_5() {
-        assert_eq!(true, Solution::is_palindrome_eq(1001));
+        assert!(Solution::is_palindrome_eq(1001));
     }
 
     #[test]
     fn test_6() {
-        assert_eq!(true, Solution::is_palindrome_num_rev(1001));
+        assert!(Solution::is_palindrome_num_rev(1001));
     }
 
     #[test]
     fn test_7() {
-        assert_eq!(true, Solution::is_palindrome_num_rev(10201));
+        assert!(Solution::is_palindrome_num_rev(10201));
     }
 }

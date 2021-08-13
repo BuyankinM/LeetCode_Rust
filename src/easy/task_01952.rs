@@ -36,21 +36,21 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(false, Solution::is_three(3));
+        assert!(!Solution::is_three(3));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(true, Solution::is_three(4));
+        assert!(Solution::is_three(4));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(false, Solution::is_three(16));
+        assert!(!Solution::is_three(16));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(true, Solution::is_three(5329));
+        assert!(Solution::is_three(5329));
     }
 }

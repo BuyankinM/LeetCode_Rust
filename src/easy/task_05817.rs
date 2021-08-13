@@ -31,47 +31,37 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(false, Solution::is_decomposable("000111000".to_owned()));
+        assert!(!Solution::is_decomposable("000111000".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(true, Solution::is_decomposable("00011111222".to_owned()));
+        assert!(Solution::is_decomposable("00011111222".to_owned()));
     }
     #[test]
     fn test_3() {
-        assert_eq!(
-            false,
-            Solution::is_decomposable("01110002223300".to_owned())
-        );
+        assert!(!Solution::is_decomposable("01110002223300".to_owned()));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(
-            false,
-            Solution::is_decomposable("01110002223300".to_owned())
-        );
+        assert!(!Solution::is_decomposable("01110002223300".to_owned()));
     }
 
     #[test]
     fn test_5() {
-        assert_eq!(
-            true,
-            Solution::is_decomposable("88888866666611177333".to_owned())
-        );
+        assert!(Solution::is_decomposable("88888866666611177333".to_owned()));
     }
 
     #[test]
     fn test_6() {
-        assert_eq!(
-            true,
-            Solution::is_decomposable("22222222222222222222222".to_owned())
-        );
+        assert!(Solution::is_decomposable(
+            "22222222222222222222222".to_owned()
+        ));
     }
 
     #[test]
     fn test_7() {
-        assert_eq!(true, Solution::is_decomposable("00".to_owned()));
+        assert!(Solution::is_decomposable("00".to_owned()));
     }
 }

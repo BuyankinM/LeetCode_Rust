@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(true, Solution::are_occurrences_equal("abacbc".to_owned()));
+        assert!( Solution::are_occurrences_equal("abacbc".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(false, Solution::are_occurrences_equal("aaabb".to_owned()));
+        assert!(! Solution::are_occurrences_equal("aaabb".to_owned()));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(true, Solution::are_occurrences_equal("aaa".to_owned()));
+        assert!( Solution::are_occurrences_equal("aaa".to_owned()));
     }
 }

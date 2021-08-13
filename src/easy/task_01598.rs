@@ -8,7 +8,7 @@ impl Solution {
         logs.iter().fold(0, |depth, s| {
             if s.starts_with("..") {
                 (depth - 1).max(0)
-            } else if s.starts_with(".") {
+            } else if s.starts_with('.') {
                 depth
             } else {
                 depth + 1

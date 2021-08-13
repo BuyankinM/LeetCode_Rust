@@ -35,7 +35,7 @@ impl Solution {
         nums1.drain(m as usize..);
         nums2.drain(n as usize..);
         nums1.append(nums2);
-        nums1.sort();
+        nums1.sort_unstable();
     }
 
     pub fn merge_order(nums1: &mut Vec<i32>, mut m: i32, nums2: &mut Vec<i32>, mut n: i32) {
@@ -58,7 +58,7 @@ impl Solution {
     pub fn merge_split_off(nums1: &mut Vec<i32>, _m: i32, nums2: &mut Vec<i32>, n: i32) {
         nums1.truncate(nums1.len() - n as usize);
         nums1.append(nums2);
-        nums1.sort();
+        nums1.sort_unstable();
     }
 }
 

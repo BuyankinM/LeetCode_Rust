@@ -8,7 +8,7 @@ impl Solution {
         let mut path_hash = std::collections::HashSet::new();
         let mut cur_point = (0, 0);
         for c in path.chars() {
-            path_hash.insert(cur_point.clone());
+            path_hash.insert(cur_point);
 
             match c {
                 'N' => cur_point = (cur_point.0, cur_point.1 + 1),
@@ -78,19 +78,18 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(false, Solution::is_path_crossing("NES".to_owned()));
+        assert!(!Solution::is_path_crossing("NES".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(true, Solution::is_path_crossing_xy("NESWW".to_owned()));
+        assert!(Solution::is_path_crossing_xy("NESWW".to_owned()));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            true,
-            Solution::is_path_crossing_best("NESWEWEWEWESNSN".to_owned())
-        );
+        assert!(Solution::is_path_crossing_best(
+            "NESWEWEWEWESNSN".to_owned()
+        ));
     }
 }

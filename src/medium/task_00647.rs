@@ -54,7 +54,7 @@ impl Solution {
     }
 
     pub fn count_substrings_fast_my(s: String) -> i32 {
-        fn count_palindromes(sb: &Vec<u8>, mut start_1: i32, mut start_2: i32) -> i32 {
+        fn count_palindromes(sb: &[u8], mut start_1: i32, mut start_2: i32) -> i32 {
             let mut n = 0;
             while start_1 >= 0 && start_2 < sb.len() as i32 {
                 if sb[start_1 as usize] != sb[start_2 as usize] {

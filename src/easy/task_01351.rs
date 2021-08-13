@@ -5,7 +5,7 @@ use crate::Solution;
 
 impl Solution {
     pub fn count_negatives(grid: Vec<Vec<i32>>) -> i32 {
-        fn neg_binsearch(v: &Vec<i32>, mut high: i32) -> i32 {
+        fn neg_binsearch(v: &[i32], mut high: i32) -> i32 {
             let mut low = 0;
             while low < high {
                 let mid = low + (high - low) / 2;

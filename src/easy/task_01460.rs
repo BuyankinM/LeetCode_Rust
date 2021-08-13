@@ -39,22 +39,16 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::can_be_equal(vec![1, 2, 3, 4], vec![2, 4, 1, 3])
-        );
+        assert!(Solution::can_be_equal(vec![1, 2, 3, 4], vec![2, 4, 1, 3]));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(true, Solution::can_be_equal_optimal(vec![7], vec![7]));
+        assert!(Solution::can_be_equal_optimal(vec![7], vec![7]));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            false,
-            Solution::can_be_equal_best(vec![3, 7, 9], vec![3, 7, 11])
-        );
+        assert!(!Solution::can_be_equal_best(vec![3, 7, 9], vec![3, 7, 11]));
     }
 }

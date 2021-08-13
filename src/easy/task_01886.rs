@@ -64,31 +64,25 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::find_rotation(vec![vec![0, 1], vec![1, 0]], vec![vec![1, 0], vec![0, 1]])
-        );
+        assert!(Solution::find_rotation(
+            vec![vec![0, 1], vec![1, 0]],
+            vec![vec![1, 0], vec![0, 1]]
+        ));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            false,
-            Solution::find_rotation_flags(
-                vec![vec![0, 1], vec![1, 1]],
-                vec![vec![1, 0], vec![0, 1]]
-            )
-        );
+        assert!(!Solution::find_rotation_flags(
+            vec![vec![0, 1], vec![1, 1]],
+            vec![vec![1, 0], vec![0, 1]]
+        ));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            true,
-            Solution::find_rotation_functional(
-                vec![vec![0, 0, 0], vec![0, 1, 0], vec![1, 1, 1]],
-                vec![vec![1, 1, 1], vec![0, 1, 0], vec![0, 0, 0]]
-            )
-        );
+        assert!(Solution::find_rotation_functional(
+            vec![vec![0, 0, 0], vec![0, 1, 0], vec![1, 1, 1]],
+            vec![vec![1, 1, 1], vec![0, 1, 0], vec![0, 0, 0]]
+        ));
     }
 }

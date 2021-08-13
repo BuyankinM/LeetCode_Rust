@@ -15,11 +15,11 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(false, Solution::check_ones_segment("1001".to_owned()));
+        assert!(!Solution::check_ones_segment("1001".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(true, Solution::check_ones_segment("110".to_owned()));
+        assert!(Solution::check_ones_segment("110".to_owned()));
     }
 }

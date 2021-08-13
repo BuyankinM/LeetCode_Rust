@@ -64,7 +64,7 @@ impl Solution {
 
             last = curr;
         }
-        return res;
+        res
     }
 }
 

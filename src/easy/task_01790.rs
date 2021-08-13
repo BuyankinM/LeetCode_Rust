@@ -30,33 +30,33 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::are_almost_equal("bank".to_owned(), "kanb".to_owned())
-        );
+        assert!(Solution::are_almost_equal(
+            "bank".to_owned(),
+            "kanb".to_owned()
+        ));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            false,
-            Solution::are_almost_equal("attack".to_owned(), "defend".to_owned())
-        );
+        assert!(!Solution::are_almost_equal(
+            "attack".to_owned(),
+            "defend".to_owned()
+        ));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            true,
-            Solution::are_almost_equal("kelb".to_owned(), "kelb".to_owned())
-        );
+        assert!(Solution::are_almost_equal(
+            "kelb".to_owned(),
+            "kelb".to_owned()
+        ));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(
-            false,
-            Solution::are_almost_equal("abcd".to_owned(), "dcba".to_owned())
-        );
+        assert!(!Solution::are_almost_equal(
+            "abcd".to_owned(),
+            "dcba".to_owned()
+        ));
     }
 }

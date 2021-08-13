@@ -13,7 +13,7 @@ impl Solution {
         .map(|(ind, s)| (*s, ind + 1))
         .collect::<std::collections::HashMap<&str, usize>>();
 
-        date.rsplit(" ")
+        date.rsplit(' ')
             .enumerate()
             .map(|(ind, s)| match ind {
                 2 => format!("{:0>2}", s.replace(char::is_alphabetic, "")),
@@ -28,7 +28,7 @@ impl Solution {
         let arr_months = [
             "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
         ];
-        date.rsplit(" ")
+        date.rsplit(' ')
             .enumerate()
             .map(|(ind, s)| match ind {
                 2 => format!("{:0>2}", s.replace(char::is_alphabetic, "")),

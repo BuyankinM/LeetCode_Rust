@@ -32,32 +32,26 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::k_length_apart(vec![1, 0, 0, 0, 1, 0, 0, 1], 2)
-        );
+        assert!(Solution::k_length_apart(vec![1, 0, 0, 0, 1, 0, 0, 1], 2));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(false, Solution::k_length_apart(vec![1, 0, 0, 1, 0, 1], 2));
+        assert!(!Solution::k_length_apart(vec![1, 0, 0, 1, 0, 1], 2));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(true, Solution::k_length_apart(vec![1, 1, 1, 1, 1], 0));
+        assert!(Solution::k_length_apart(vec![1, 1, 1, 1, 1], 0));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(true, Solution::k_length_apart(vec![0, 1, 0, 1], 1));
+        assert!(Solution::k_length_apart(vec![0, 1, 0, 1], 1));
     }
 
     #[test]
     fn test_5() {
-        assert_eq!(
-            true,
-            Solution::k_length_apart(vec![0, 1, 0, 0, 1, 0, 0, 1], 2)
-        );
+        assert!(Solution::k_length_apart(vec![0, 1, 0, 0, 1, 0, 0, 1], 2));
     }
 }

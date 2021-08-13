@@ -6,7 +6,7 @@ use std::collections::HashSet;
 
 impl Solution {
     pub fn spellchecker(wordlist: Vec<String>, queries: Vec<String>) -> Vec<String> {
-        fn make_string_wo_vowels(s: &String) -> String {
+        fn make_string_wo_vowels(s: &str) -> String {
             s.chars()
                 .map(|x| match x.to_ascii_lowercase() {
                     'a' | 'e' | 'i' | 'o' | 'u' => '_',
@@ -35,7 +35,7 @@ impl Solution {
                 result.push(q.to_owned())
             } else if let Some(&s) = case_insensitive_match.get(&q.to_lowercase()) {
                 result.push(s.to_owned())
-            } else if let Some(&s) = vowel_errors_match.get(&make_string_wo_vowels(&q)) {
+            } else if let Some(&s) = vowel_errors_match.get(&make_string_wo_vowels(q)) {
                 result.push(s.to_owned())
             } else {
                 result.push("".to_owned())

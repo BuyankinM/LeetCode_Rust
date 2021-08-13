@@ -31,34 +31,25 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::array_strings_are_equal(
-                vec!["ab".to_owned(), "c".to_owned()],
-                vec!["a".to_owned(), "bc".to_owned()]
-            )
-        );
+        assert!(Solution::array_strings_are_equal(
+            vec!["ab".to_owned(), "c".to_owned()],
+            vec!["a".to_owned(), "bc".to_owned()]
+        ));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            false,
-            Solution::array_strings_are_equal_join(
-                vec!["a".to_owned(), "cb".to_owned()],
-                vec!["a".to_owned(), "bc".to_owned()]
-            )
-        );
+        assert!(!Solution::array_strings_are_equal_join(
+            vec!["a".to_owned(), "cb".to_owned()],
+            vec!["a".to_owned(), "bc".to_owned()]
+        ));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            true,
-            Solution::array_strings_are_equal_iter(
-                vec!["abc".to_owned(), "d".to_owned(), "defg".to_owned()],
-                vec!["abcddefg".to_owned()]
-            )
-        );
+        assert!(Solution::array_strings_are_equal_iter(
+            vec!["abc".to_owned(), "d".to_owned(), "defg".to_owned()],
+            vec!["abcddefg".to_owned()]
+        ));
     }
 }

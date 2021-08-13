@@ -19,7 +19,7 @@ impl Solution {
         }
 
         let h = get_hash_bytes_power2();
-        let mut nb = n.to_string().clone().into_bytes();
+        let mut nb = n.to_string().into_bytes();
         nb.sort_unstable();
 
         h.contains(&nb)

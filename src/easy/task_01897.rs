@@ -24,25 +24,20 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(
-            true,
-            Solution::make_equal(vec!["abc".to_owned(), "aabc".to_owned(), "bc".to_owned()])
-        );
+        assert!(Solution::make_equal(vec![
+            "abc".to_owned(),
+            "aabc".to_owned(),
+            "bc".to_owned()
+        ]));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(
-            false,
-            Solution::make_equal(vec!["ab".to_owned(), "a".to_owned()])
-        );
+        assert!(!Solution::make_equal(vec!["ab".to_owned(), "a".to_owned()]));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(
-            false,
-            Solution::make_equal(vec!["a".to_owned(), "b".to_owned()])
-        );
+        assert!(!Solution::make_equal(vec!["a".to_owned(), "b".to_owned()]));
     }
 }

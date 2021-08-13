@@ -20,7 +20,7 @@ impl Solution {
     }
 
     pub fn length_of_last_word_split(s: String) -> i32 {
-        s.trim().split(" ").last().unwrap().chars().count() as i32
+        s.trim().split(' ').last().unwrap().chars().count() as i32
     }
 
     pub fn length_of_last_word_rsplit(s: String) -> i32 {

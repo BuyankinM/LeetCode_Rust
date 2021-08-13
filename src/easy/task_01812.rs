@@ -19,16 +19,16 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(false, Solution::square_is_white("a1".to_owned()));
+        assert!(!Solution::square_is_white("a1".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(true, Solution::square_is_white("h3".to_owned()));
+        assert!(Solution::square_is_white("h3".to_owned()));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(false, Solution::square_is_white("c7".to_owned()));
+        assert!(!Solution::square_is_white("c7".to_owned()));
     }
 }

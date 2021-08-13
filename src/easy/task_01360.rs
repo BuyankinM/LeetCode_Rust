@@ -19,8 +19,8 @@ impl Solution {
         };
 
         let str_to_int = |s: &str| -> i32 { s.parse().unwrap() };
-        let mut min_date_vec = date1.split("-").map(str_to_int).collect::<Vec<_>>();
-        let mut max_date_vec = date2.split("-").map(str_to_int).collect::<Vec<_>>();
+        let mut min_date_vec = date1.split('-').map(str_to_int).collect::<Vec<_>>();
+        let mut max_date_vec = date2.split('-').map(str_to_int).collect::<Vec<_>>();
         if date1 > date2 {
             std::mem::swap(&mut min_date_vec, &mut max_date_vec);
         }

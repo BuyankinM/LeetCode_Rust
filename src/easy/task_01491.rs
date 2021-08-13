@@ -23,19 +23,19 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(2500.0, Solution::average(vec![4000, 3000, 1000, 2000]));
+        assert_eq!(2500, Solution::average(vec![4000, 3000, 1000, 2000]) as i32);
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(2000.0, Solution::average(vec![1000, 2000, 3000]));
+        assert_eq!(2000, Solution::average(vec![1000, 2000, 3000]) as i32);
     }
 
     #[test]
     fn test_3() {
         assert_eq!(
-            3500.0,
-            Solution::average(vec![6000, 5000, 4000, 3000, 2000, 1000])
+            3500,
+            Solution::average(vec![6000, 5000, 4000, 3000, 2000, 1000]) as i32
         );
     }
 }

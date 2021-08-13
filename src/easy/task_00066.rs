@@ -21,15 +21,20 @@ impl Solution {
     pub fn plus_one_tryfold(digits: Vec<i32>) -> Vec<i32> {
         let mut digits = digits;
 
-        if let Some(_) = digits.iter_mut().rev().try_fold(1, |carry, v| {
-            *v += carry;
-            if *v == 10 {
-                *v = 0;
-                Some(1)
-            } else {
-                None // stop since no more carry
-            }
-        }) {
+        if digits
+            .iter_mut()
+            .rev()
+            .try_fold(1, |carry, v| {
+                *v += carry;
+                if *v == 10 {
+                    *v = 0;
+                    Some(1)
+                } else {
+                    None // stop since no more carry
+                }
+            })
+            .is_some()
+        {
             digits.insert(0, 1);
         }
         digits

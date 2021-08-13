@@ -47,15 +47,15 @@ impl Solution {
         let mut rs = vec![0; m];
         let mut cs = vec![0; n];
         for i in 0..m {
-            for j in 0..n {
+            for (j, val) in cs.iter_mut().enumerate() {
                 rs[i] += mat[i][j];
-                cs[j] += mat[i][j];
+                *val += mat[i][j];
             }
         }
         let mut ans = 0;
         for i in 0..m {
-            for j in 0..n {
-                if mat[i][j] == 1 && rs[i] <= 1 && cs[j] <= 1 {
+            for (j, val) in cs.iter().enumerate() {
+                if mat[i][j] == 1 && rs[i] <= 1 && *val <= 1 {
                     ans += 1;
                 }
             }

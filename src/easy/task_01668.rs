@@ -14,8 +14,8 @@ impl Solution {
 
         while i < sequence.len() {
             count = 0;
-            for j in i..sequence.len() {
-                match sb[j] == wb[count % l] {
+            for val in sb.iter().skip(i) {
+                match *val == wb[count % l] {
                     true => count += 1,
                     false => break,
                 }
@@ -36,7 +36,7 @@ impl Solution {
     pub fn max_repeating_short(sequence: String, word: String) -> i32 {
         let max_word = word.repeat(sequence.len() / word.len());
         let mut n = max_word.len();
-        while sequence.find(&max_word[..n]).is_none() {
+        while !sequence.contains(&max_word[..n]) {
             n -= word.len();
         }
         (n / word.len()) as _

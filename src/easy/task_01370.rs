@@ -20,7 +20,7 @@ impl Solution {
             };
 
             ind += incr;
-            if ind < 0 || ind > 25 {
+            if !(0..=25).contains(&ind) {
                 ind = if ind < 0 { 0 } else { 25 };
                 incr *= -1;
             };

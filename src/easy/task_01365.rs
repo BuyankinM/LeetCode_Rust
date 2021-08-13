@@ -5,7 +5,7 @@ use crate::Solution;
 
 impl Solution {
     pub fn smaller_numbers_than_current(nums: Vec<i32>) -> Vec<i32> {
-        fn binary_search_min(nums: &Vec<i32>, target: i32) -> i32 {
+        fn binary_search_min(nums: &[i32], target: i32) -> i32 {
             let (mut low, mut high) = (0i32, nums.len() as i32);
             while low <= high {
                 let mid = low + (high - low) / 2;

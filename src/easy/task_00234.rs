@@ -51,10 +51,7 @@ mod tests {
         l2.next = Some(Box::new(l3));
         l1.next = Some(Box::new(l2));
 
-        assert_eq!(
-            true,
-            Solution::is_palindrome_linked_list(Some(Box::new(l1)))
-        );
+        assert!(Solution::is_palindrome_linked_list(Some(Box::new(l1))));
     }
 
     #[test]
@@ -62,9 +59,6 @@ mod tests {
         let mut l1 = ListNode::new(1);
         l1.next = Some(Box::new(ListNode::new(2)));
 
-        assert_eq!(
-            false,
-            Solution::is_palindrome_linked_list(Some(Box::new(l1)))
-        );
+        assert!(!Solution::is_palindrome_linked_list(Some(Box::new(l1))));
     }
 }
