@@ -61,14 +61,13 @@ impl Solution {
             }
         }
 
-        for r in 0..rows {
-            for c in 0..cols {
-                if path[r][c] == 3 {
+        for (r, row) in path.iter().enumerate() {
+            for (c, val) in row.iter().enumerate() {
+                if *val == 3 {
                     res.push(vec![r as i32, c as i32]);
                 }
             }
         }
-
         res
     }
 }

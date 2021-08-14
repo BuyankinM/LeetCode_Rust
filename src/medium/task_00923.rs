@@ -9,18 +9,17 @@ const M: i32 = 1_000_000_007;
 impl Solution {
     pub fn three_sum_multi_bruteforce(arr: Vec<i32>, target: i32) -> i32 {
         let l = arr.len();
-        let mut n: i32 = 0;
+        let mut res: i32 = 0;
 
         for i in 0..l - 2 {
             let ai = arr[i];
             for j in (i + 1)..l - 1 {
                 let aj = arr[j];
-                for k in (j + 1)..l {
-                    let ak = arr[k];
+                for &ak in arr[j + 1..].iter() {
                     match ai + aj + ak {
                         s if s == target => {
-                            n += 1;
-                            n %= M;
+                            res += 1;
+                            res %= M;
                         }
                         s if (s > target) => break,
                         _ => (),
@@ -29,16 +28,16 @@ impl Solution {
             }
         }
 
-        n % M
+        res % M
     }
 
     pub fn three_sum_multi_3pointers(arr: Vec<i32>, target: i32) -> i32 {
-        let l = arr.len();
-        let mut n: i32 = 0;
+        let len = arr.len();
+        let mut res: i32 = 0;
 
-        for i in 0..l {
+        for i in 0..len {
             let t = target - arr[i];
-            let (mut j, mut k) = (i + 1, l - 1);
+            let (mut j, mut k) = (i + 1, len - 1);
 
             while j < k {
                 if arr[j] + arr[k] < t {
@@ -57,20 +56,20 @@ impl Solution {
                         k -= 1;
                     }
 
-                    n += left * right;
-                    n %= M;
+                    res += left * right;
+                    res %= M;
 
                     j += 1;
                     k -= 1;
                 } else {
-                    n += ((k - j + 1) * (k - j) / 2) as i32;
-                    n %= M;
+                    res += ((k - j + 1) * (k - j) / 2) as i32;
+                    res %= M;
                     break;
                 }
             }
         }
 
-        n % M
+        res % M
     }
 
     pub fn three_sum_multi_cases(arr: Vec<i32>, target: i32) -> i32 {

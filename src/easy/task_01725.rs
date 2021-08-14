@@ -5,16 +5,20 @@ use crate::Solution;
 
 impl Solution {
     pub fn count_good_rectangles(rectangles: Vec<Vec<i32>>) -> i32 {
+        use std::cmp::Ordering;
+
         let (mut res, mut max_lenght, mut length) = (0, 0, 0);
 
         rectangles.iter().for_each(|v| {
             length = v[0].min(v[1]);
-            if length > max_lenght {
-                res = 1;
-                max_lenght = length;
-            } else if length == max_lenght {
-                res += 1;
-            }
+            match length.cmp(&max_lenght) {
+                Ordering::Greater => {
+                    res = 1;
+                    max_lenght = length;
+                }
+                Ordering::Equal => res += 1,
+                _ => (),
+            };
         });
 
         res

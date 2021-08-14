@@ -6,25 +6,25 @@ use std::str::from_utf8;
 
 impl Solution {
     pub fn has_all_codes(s: String, k: i32) -> bool {
-        let kk = k as usize;
-        let l: usize = 2_usize.pow(kk as u32);
+        let size_k = k as usize;
+        let val_2k: usize = 2_usize.pow(size_k as u32);
 
-        if s.len() < (l + (k as usize) - 1) {
+        if s.len() < (val_2k + size_k - 1) {
             return false;
         }
 
-        let mut a: Vec<u8> = vec![0; l];
+        let mut a: Vec<u8> = vec![0; val_2k];
         let mut n: usize = 0;
         let sb = &s.as_bytes();
 
-        for i in 0..=(s.len() - kk) {
-            let ss = from_utf8(&sb[i..i + kk]).unwrap();
+        for i in 0..=(s.len() - size_k) {
+            let ss = from_utf8(&sb[i..i + size_k]).unwrap();
             let ind: usize = usize::from_str_radix(ss, 2).unwrap();
             if a[ind] == 0 {
                 a[ind] = 1;
                 n += 1;
             }
-            if n == l {
+            if n == val_2k {
                 return true;
             }
         }

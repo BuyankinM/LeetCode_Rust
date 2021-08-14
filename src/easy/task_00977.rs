@@ -14,14 +14,14 @@ impl Solution {
         use std::cmp::Ordering;
 
         let l = nums.len();
-        let mut v = vec![0; l];
+        let mut arr_square = vec![0; l];
 
         if l == 1 {
-            v[0] = nums[0].pow(2);
+            arr_square[0] = nums[0].pow(2);
         } else if nums[0] >= 0 {
-            v = nums.iter().map(|x| x.pow(2)).collect();
+            arr_square = nums.iter().map(|x| x.pow(2)).collect();
         } else if nums[l - 1] <= 0 {
-            v = nums.iter().rev().map(|x| x.pow(2)).collect();
+            arr_square = nums.iter().rev().map(|x| x.pow(2)).collect();
         } else {
             let mut i: usize = 0;
             let mut j: usize = l - 1;
@@ -33,16 +33,16 @@ impl Solution {
 
                 match n_i.cmp(&n_j) {
                     Ordering::Greater => {
-                        v[k] = n_i;
+                        arr_square[k] = n_i;
                         i += 1;
                     }
                     Ordering::Less => {
-                        v[k] = n_j;
+                        arr_square[k] = n_j;
                         j -= 1;
                     }
                     Ordering::Equal => {
-                        v[k] = n_j;
-                        v[k - 1] = n_i;
+                        arr_square[k] = n_j;
+                        arr_square[k - 1] = n_i;
                         j -= 1;
                         i += 1;
                         k -= 1
@@ -51,10 +51,10 @@ impl Solution {
                 k -= 1;
             }
             if i == j {
-                v[0] = nums[i].pow(2)
+                arr_square[0] = nums[i].pow(2)
             }
         }
-        v
+        arr_square
     }
 
     pub fn sorted_squares_ON_short(nums: Vec<i32>) -> Vec<i32> {
