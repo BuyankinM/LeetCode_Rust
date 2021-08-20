@@ -33,65 +33,55 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert!(
-            Solution::is_prefix_string(
-                "iloveleetcode".to_string(),
-                vec![
-                    "i".to_string(),
-                    "love".to_string(),
-                    "leetcode".to_string(),
-                    "apples".to_string()
-                ]
-            )
-        );
+        assert!(Solution::is_prefix_string(
+            "iloveleetcode".to_string(),
+            vec![
+                "i".to_string(),
+                "love".to_string(),
+                "leetcode".to_string(),
+                "apples".to_string()
+            ]
+        ));
     }
 
     #[test]
     fn test_2() {
-        assert!(!
-            Solution::is_prefix_string(
-                "iloveleetcode".to_string(),
-                vec![
-                    "apples".to_string(),
-                    "i".to_string(),
-                    "love".to_string(),
-                    "leetcode".to_string(),
-                ]
-            )
-        );
+        assert!(!Solution::is_prefix_string(
+            "iloveleetcode".to_string(),
+            vec![
+                "apples".to_string(),
+                "i".to_string(),
+                "love".to_string(),
+                "leetcode".to_string(),
+            ]
+        ));
     }
 
     #[test]
     fn test_3() {
-        assert!(!
-            Solution::is_prefix_string(
-                "iloveleetcode".to_string(),
-                vec![
-                    "i".to_string(),
-                    "love".to_string(),
-                    "leetcode!!!".to_string(),
-                ]
-            )
-        );
+        assert!(!Solution::is_prefix_string(
+            "iloveleetcode".to_string(),
+            vec![
+                "i".to_string(),
+                "love".to_string(),
+                "leetcode!!!".to_string(),
+            ]
+        ));
     }
 
     #[test]
     fn test_4() {
-        assert!(!
-            Solution::is_prefix_string(
-                "iloveleetcode!!!".to_string(),
-                vec!["i".to_string(), "love".to_string(), "leetcode".to_string(),]
-            )
-        );
+        assert!(!Solution::is_prefix_string(
+            "iloveleetcode!!!".to_string(),
+            vec!["i".to_string(), "love".to_string(), "leetcode".to_string(),]
+        ));
     }
 
     #[test]
     fn test_5() {
-        assert!(!
-            Solution::is_prefix_string(
-                "iloveleet".to_string(),
-                vec!["i".to_string(), "love".to_string(), "leetcode".to_string(),]
-            )
-        );
+        assert!(!Solution::is_prefix_string(
+            "iloveleet".to_string(),
+            vec!["i".to_string(), "love".to_string(), "leetcode".to_string(),]
+        ));
     }
 }

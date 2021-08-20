@@ -15,6 +15,20 @@ impl Solution {
         }
         prod - sum
     }
+
+    pub fn subtract_product_and_sum_iter(n: i32) -> i32 {
+        fn digits(mut n: i32) -> impl Iterator<Item = i32> {
+            std::iter::from_fn(move || match n == 0 {
+                false => {
+                    let digit = n % 10;
+                    n /= 10;
+                    Some(digit)
+                }
+                true => None,
+            })
+        }
+        digits(n).product::<i32>() - digits(n).sum::<i32>()
+    }
 }
 
 #[cfg(test)]
@@ -29,5 +43,10 @@ mod tests {
     #[test]
     fn test_2() {
         assert_eq!(21, Solution::subtract_product_and_sum(4421));
+    }
+
+    #[test]
+    fn test_3() {
+        assert_eq!(21, Solution::subtract_product_and_sum_iter(4421));
     }
 }

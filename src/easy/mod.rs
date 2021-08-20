@@ -1,3 +1,4 @@
+
 pub mod task_00001;
 pub mod task_00007;
 pub mod task_00009;
@@ -29,6 +30,9 @@ pub mod task_00977;
 pub mod task_01051;
 pub mod task_01089;
 pub mod task_01108;
+pub mod task_01260;
+pub mod task_01266;
+pub mod task_01275;
 pub mod task_01281;
 pub mod task_01287;
 pub mod task_01290;
@@ -162,4 +166,6 @@ pub mod task_01945;
 pub mod task_01952;
 pub mod task_01957;
 pub mod task_01961;
+pub mod task_01967;
+pub mod task_01971;
 pub mod task_05817;
