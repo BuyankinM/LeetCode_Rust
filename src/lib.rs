@@ -3,4 +3,5 @@
 #![allow(unused_imports)]
 pub mod easy;
 pub mod medium;
+pub mod hard;
 pub struct Solution;

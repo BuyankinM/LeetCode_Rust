@@ -18,6 +18,16 @@ impl Solution {
         }
         diff
     }
+
+    // https://leetcode.com/problems/maximum-difference-between-increasing-elements/discuss/1492046/Rust-solution/1101698
+    pub fn maximum_difference_func(nums: Vec<i32>) -> i32 {
+        nums.iter()
+            .fold((-1, i32::MAX), |(res, mn), &n| {
+                let diff = if n > mn { n - mn } else { -2 };
+                (std::cmp::max(res, diff), std::cmp::min(mn, n))
+            })
+            .0
+    }
 }
 
 #[cfg(test)]
