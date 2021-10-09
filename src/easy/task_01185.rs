@@ -27,7 +27,7 @@ impl Solution {
             + day;
 
         // 01/01/1971 - Friday
-        let res_day = (4 + (num_days - 1)) % 7;
+        let res_day = (5 + (num_days - 1)) % 7;
         WEEKDAYS[res_day as usize].to_string()
     }
 
