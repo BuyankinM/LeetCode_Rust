@@ -73,19 +73,36 @@ use leet_code::Solution;
 // }
 
 // Group from 2 functions and range of input
-fn criterion_benchmark_2(c: &mut Criterion) {
-    let mut group = c.benchmark_group("2022. Convert 1D Array Into 2D Array");
-    for &i in [100, 500, 1000].iter() {
-        let m = i as i32;
-        let m2 = m * m;
-        let v = (0..m2).collect::<Vec<i32>>();
+// fn criterion_benchmark_2(c: &mut Criterion) {
+//     let mut group = c.benchmark_group("2022. Convert 1D Array Into 2D Array");
+//     for &i in [100, 500, 1000].iter() {
+//         let m = i as i32;
+//         let m2 = m * m;
+//         let v = (0..m2).collect::<Vec<i32>>();
 
-        group.bench_with_input(BenchmarkId::new("Chunks", &m2), &v, |b, v| {
-            b.iter(|| Solution::construct2_d_array(v.clone(), i, i))
+//         group.bench_with_input(BenchmarkId::new("Chunks", &m2), &v, |b, v| {
+//             b.iter(|| Solution::construct2_d_array(v.clone(), i, i))
+//         });
+
+//         group.bench_with_input(BenchmarkId::new("Iter_Take", &m2), &v, |b, v| {
+//             b.iter(|| Solution::construct2_d_array(v.clone(), i, i))
+//         });
+//     }
+//     group.finish();
+// }
+
+fn criterion_benchmark_2(c: &mut Criterion) {
+    let mut group = c.benchmark_group("2027. Minimum Moves to Convert String");
+    for &i in [1000, 5000, 10000].iter() {
+        let l = 4 * i;
+        let s = "XXOX".repeat(i as usize);
+
+        group.bench_with_input(BenchmarkId::new("Into_Bytes", &l), &s, |b, s| {
+            b.iter(|| Solution::minimum_moves(s.clone()))
         });
 
-        group.bench_with_input(BenchmarkId::new("Iter_Take", &m2), &v, |b, v| {
-            b.iter(|| Solution::construct2_d_array(v.clone(), i, i))
+        group.bench_with_input(BenchmarkId::new("Chars", &l), &s, |b, s| {
+            b.iter(|| Solution::minimum_moves_chars(s.clone()))
         });
     }
     group.finish();

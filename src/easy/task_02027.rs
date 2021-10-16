@@ -18,6 +18,20 @@ impl Solution {
             })
             .0
     }
+
+    pub fn minimum_moves_chars(s: String) -> i32 {
+        s.chars()
+            .enumerate()
+            .filter(|&(_, c)| c == 'X')
+            .fold((0, 0), |(mut moves, mut next_ind), (ind, _)| {
+                if ind >= next_ind {
+                    moves += 1;
+                    next_ind = ind + 3
+                };
+                (moves, next_ind)
+            })
+            .0
+    }
 }
 
 #[cfg(test)]
@@ -38,4 +52,10 @@ mod tests {
     fn test_3() {
         assert_eq!(0, Solution::minimum_moves("OOOO".to_owned()));
     }
+
+    #[test]
+    fn test_4() {
+        assert_eq!(2, Solution::minimum_moves_chars("XXOX".to_owned()));
+    }
+
 }
