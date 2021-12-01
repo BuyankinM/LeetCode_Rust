@@ -30,6 +30,14 @@ impl Solution {
         });
         m.values().filter(|v| **v == 0).count() as _
     }
+
+    // https://leetcode.com/problems/count-common-words-with-one-occurrence/discuss/1600657/Rust-solutions-(4-ms)/1165974
+    pub fn count_words_one_hashmap_primes(words1: Vec<String>, words2: Vec<String>) -> i32 {
+        let mut m = std::collections::HashMap::new();
+        words1.iter().for_each(|w| *m.entry(w).or_insert(0) += 2);
+        words2.iter().for_each(|w| *m.entry(w).or_insert(0) += 3);
+        m.values().filter(|&&x| x == 2 + 3).count() as i32
+    }
 }
 
 #[cfg(test)]

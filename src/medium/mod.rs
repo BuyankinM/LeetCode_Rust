@@ -5,6 +5,7 @@ pub mod task_00075;
 pub mod task_00079;
 pub mod task_00129;
 pub mod task_00151;
+pub mod task_00198;
 pub mod task_00201;
 pub mod task_00208;
 pub mod task_00222;
