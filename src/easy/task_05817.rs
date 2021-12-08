@@ -9,7 +9,7 @@ impl Solution {
         let mut counter = 0;
         let mut prev_c = None;
 
-        for opt_c in s.chars().map(|x| Some(x)) {
+        for opt_c in s.chars().map(Some) {
             if prev_c.is_some() && prev_c != opt_c {
                 match counter % 3 {
                     rem if rem == 1 || rem == 2 && size_two => return false,
