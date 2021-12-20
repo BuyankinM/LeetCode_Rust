@@ -11,7 +11,7 @@ impl Solution {
                 return word.to_string();
             }
         }
-        ".to_string()".to_string()
+        "".to_string()
     }
 }
 
