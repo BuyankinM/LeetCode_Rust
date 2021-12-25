@@ -34,6 +34,7 @@ pub mod task_00496;
 pub mod task_00543;
 pub mod task_00563;
 pub mod task_00575;
+pub mod task_00697;
 pub mod task_00700;
 pub mod task_00703;
 pub mod task_00704;
