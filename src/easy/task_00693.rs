@@ -15,6 +15,10 @@ impl Solution {
         }
         true
     }
+
+    pub fn has_alternating_bits_short(n: i32) -> bool {
+        n <= 2 || n ^ (n >> 1) == ((n as usize).next_power_of_two() - 1) as i32
+    }
 }
 
 #[cfg(test)]
