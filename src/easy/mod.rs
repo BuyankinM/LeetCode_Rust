@@ -324,4 +324,5 @@ pub mod task_02138;
 pub mod task_02144;
 pub mod task_02148;
 pub mod task_02154;
+pub mod task_02160;
 pub mod task_05817;
