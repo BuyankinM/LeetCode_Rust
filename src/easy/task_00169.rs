@@ -27,6 +27,12 @@ impl Solution {
         }
         ans
     }
+
+    // https://leetcode.com/problems/majority-element/discuss/1702331/Rust-2-lines-0-ms
+    pub fn majority_element_sort(mut nums: Vec<i32>) -> i32 {
+        let l = nums.len();
+        *nums.select_nth_unstable(l / 2).1
+    }
 }
 
 #[cfg(test)]
