@@ -30,8 +30,7 @@ impl Solution {
         fn recur(v: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
             if let Some(val) = v.first() {
                 let i = (1..v.len())
-                    .find(|&i| v[i] > v[0])
-                    .unwrap_or_else(|| v.len());
+                    .find(|&i| v[i] > v[0]).unwrap_or(v.len());
 
                 let node = Rc::new(RefCell::new(TreeNode {
                     val: *val,

@@ -26,8 +26,7 @@ impl Solution {
             .into_iter()
             .enumerate()
             .filter(|(_, num)| *num > 0)
-            .map(|(ind, num)| vec![((ind as u8 + b'a') as char).to_string(); num as usize])
-            .flatten()
+            .flat_map(|(ind, num)| vec![((ind as u8 + b'a') as char).to_string(); num as usize])
             .collect()
     }
 }

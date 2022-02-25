@@ -5,8 +5,8 @@ use crate::Solution;
 
 impl Solution {
     pub fn array_strings_are_equal(word1: Vec<String>, word2: Vec<String>) -> bool {
-        let wb_1: Vec<&u8> = word1.iter().map(|x| x.as_bytes()).flatten().collect();
-        let wb_2: Vec<&u8> = word2.iter().map(|x| x.as_bytes()).flatten().collect();
+        let wb_1: Vec<&u8> = word1.iter().flat_map(|x| x.as_bytes()).collect();
+        let wb_2: Vec<&u8> = word2.iter().flat_map(|x| x.as_bytes()).collect();
         wb_1 == wb_2
     }
 
