@@ -22,8 +22,7 @@ impl Solution {
                 _ if x == m3 => "Bronze Medal".to_string(),
                 _ => score_sort
                     .binary_search(&x)
-                    .map(|i| l - i)
-                    .unwrap()
+                    .map_or(0, |i| l - i)
                     .to_string(),
             })
             .collect()
