@@ -363,4 +363,5 @@ pub mod task_02206;
 pub mod task_02210;
 pub mod task_02215;
 pub mod task_02220;
+pub mod task_02224;
 pub mod task_05817;
