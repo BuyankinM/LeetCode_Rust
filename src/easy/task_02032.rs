@@ -11,7 +11,6 @@ impl Solution {
         nums3.iter().for_each(|&x| counter[x as usize] |= 0b100);
         counter
             .iter()
-            .cloned()
             .enumerate()
             .filter_map(|(ind, x)| match x.count_ones() >= 2 {
                 true => Some(ind as i32),
