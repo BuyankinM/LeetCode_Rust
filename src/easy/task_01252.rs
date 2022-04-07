@@ -62,6 +62,9 @@ mod tests {
 
     #[test]
     fn test_4() {
-        assert_eq!(0, Solution::odd_cells_bits(2, 2, vec![vec![1, 1], vec![0, 0]]));
+        assert_eq!(
+            0,
+            Solution::odd_cells_bits(2, 2, vec![vec![1, 1], vec![0, 0]])
+        );
     }
 }

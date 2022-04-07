@@ -54,7 +54,6 @@ impl Solution {
         mut head: Option<Box<ListNode>>,
         val: i32,
     ) -> Option<Box<ListNode>> {
-        
         let mut dummy = None;
         let mut tail = &mut dummy;
 

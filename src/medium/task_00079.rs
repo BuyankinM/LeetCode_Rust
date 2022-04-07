@@ -35,7 +35,6 @@ impl Solution {
         i: usize,
         j: usize,
     ) -> bool {
-        
         if i >= board.len() || j >= board[0].len() || used[i][j] || board[i][j] != word[0] {
             return false;
         } else if word.len() == 1 {

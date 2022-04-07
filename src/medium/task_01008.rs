@@ -29,8 +29,7 @@ impl Solution {
     pub fn bst_from_preorder(preorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
         fn recur(v: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
             if let Some(val) = v.first() {
-                let i = (1..v.len())
-                    .find(|&i| v[i] > v[0]).unwrap_or(v.len());
+                let i = (1..v.len()).find(|&i| v[i] > v[0]).unwrap_or(v.len());
 
                 let node = Rc::new(RefCell::new(TreeNode {
                     val: *val,

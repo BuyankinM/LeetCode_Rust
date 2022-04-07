@@ -29,6 +29,6 @@ mod tests {
     fn test_2() {
         let mut s = vec!['H', 'a', 'n', 'n', 'a', 'h'];
         Solution::reverse_string_swap(&mut s);
-        assert_eq!(vec!['h', 'a', 'n', 'n', 'a', 'H'], s);        
+        assert_eq!(vec!['h', 'a', 'n', 'n', 'a', 'H'], s);
     }
 }

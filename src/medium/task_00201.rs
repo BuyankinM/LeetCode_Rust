@@ -72,4 +72,3 @@ mod tests {
         assert_eq!(0, Solution::range_bitwise_and_mask(1, 2147483647));
     }
 }
-

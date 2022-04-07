@@ -32,7 +32,7 @@ impl RandomizedSet {
 
         let cur_ind = *self.map.get(&val).unwrap();
         let last_val = *self.list.last().unwrap();
-        
+
         self.map.insert(last_val, cur_ind);
         self.list.swap_remove(cur_ind);
         self.map.remove(&val);

@@ -22,8 +22,8 @@ impl TreeNode {
 
 use crate::Solution;
 use std::cell::RefCell;
-use std::rc::Rc;
 use std::i32::{MAX, MIN};
+use std::rc::Rc;
 type OptNode = Option<Rc<RefCell<TreeNode>>>;
 
 impl Solution {

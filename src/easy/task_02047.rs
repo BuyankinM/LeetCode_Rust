@@ -28,7 +28,7 @@ impl Solution {
                 } else if is_punct {
                     find_punct = true;
                 } else if check_next_alpha {
-                    check_next_alpha = false; 
+                    check_next_alpha = false;
                 }
             }
             res += 1;

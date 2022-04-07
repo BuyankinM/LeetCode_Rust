@@ -92,7 +92,7 @@ mod tests {
             Solution::largest_sum_after_k_negations(vec![2, -3, -1, 5, -4], 2)
         );
     }
-    
+
     #[test]
     fn test_5() {
         assert_eq!(

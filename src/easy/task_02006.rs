@@ -28,11 +28,11 @@ mod tests {
 
     #[test]
     fn test_2() {
-        assert_eq!(0, Solution::count_k_difference(vec![1,3], 3));
+        assert_eq!(0, Solution::count_k_difference(vec![1, 3], 3));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(3, Solution::count_k_difference(vec![3,2,1,5,4], 2));
+        assert_eq!(3, Solution::count_k_difference(vec![3, 2, 1, 5, 4], 2));
     }
 }

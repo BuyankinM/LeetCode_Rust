@@ -57,5 +57,4 @@ mod tests {
     fn test_4() {
         assert_eq!(2, Solution::minimum_moves_chars("XXOX".to_owned()));
     }
-
 }
