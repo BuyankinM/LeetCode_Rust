@@ -4,12 +4,12 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn reverse_string_swap(s: &mut Vec<char>) {
+    pub fn reverse_string_swap(s: &mut [char]) {
         let l = s.len();
         (0..l / 2).for_each(|idx| s.swap(idx, l - idx - 1));
     }
 
-    pub fn reverse_string_1line(s: &mut Vec<char>) {
+    pub fn reverse_string_1line(s: &mut [char]) {
         s.reverse()
     }
 }

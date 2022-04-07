@@ -4,7 +4,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn move_zeroes(nums: &mut Vec<i32>) {
+    pub fn move_zeroes(nums: &mut [i32]) {
         let mut zero_pos: usize = 0;
         let mut num_zeros = 0;
 

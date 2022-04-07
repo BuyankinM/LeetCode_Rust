@@ -5,7 +5,7 @@ use crate::Solution;
 
 impl Solution {
     // https://en.wikipedia.org/wiki/Dutch_national_flag_problem
-    pub fn sort_colors(nums: &mut Vec<i32>) {
+    pub fn sort_colors(nums: &mut [i32]) {
         let (mut red, mut white, mut blue) = (0, 0, nums.len() - 1);
         while white <= blue {
             match nums[white] {

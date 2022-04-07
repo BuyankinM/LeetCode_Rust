@@ -4,7 +4,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
+    pub fn merge(nums1: &mut [i32], m: i32, nums2: &mut [i32], n: i32) {
         if n == 0 {
             return;
         }
@@ -38,7 +38,7 @@ impl Solution {
         nums1.sort_unstable();
     }
 
-    pub fn merge_order(nums1: &mut Vec<i32>, mut m: i32, nums2: &mut Vec<i32>, mut n: i32) {
+    pub fn merge_order(nums1: &mut [i32], mut m: i32, nums2: &mut [i32], mut n: i32) {
         for i in (0..nums1.len()).rev() {
             let a = nums1.get((m - 1) as usize).unwrap_or(&std::i32::MIN);
             let b = nums2.get((n - 1) as usize).unwrap_or(&std::i32::MIN);
@@ -69,7 +69,7 @@ mod tests {
     #[test]
     fn test_1() {
         let mut nums1 = vec![1, 2, 3, 0, 0, 0];
-        Solution::merge(&mut nums1, 3, &mut vec![2, 5, 6], 3);
+        Solution::merge(&mut nums1, 3, &mut [2, 5, 6], 3);
         assert_eq!(vec![1, 2, 2, 3, 5, 6], nums1);
     }
 

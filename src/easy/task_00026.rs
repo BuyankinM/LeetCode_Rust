@@ -4,7 +4,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+    pub fn remove_duplicates(nums: &mut [i32]) -> i32 {
         match nums.len() {
             0 => return 0,
             1 => return 1,
@@ -39,7 +39,7 @@ mod tests {
     fn test_1() {
         assert_eq!(
             5,
-            Solution::remove_duplicates(&mut vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
+            Solution::remove_duplicates(&mut [0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
         );
     }
 
