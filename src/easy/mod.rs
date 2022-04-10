@@ -42,6 +42,7 @@ pub mod task_00448;
 pub mod task_00461;
 pub mod task_00463;
 pub mod task_00476;
+pub mod task_00482;
 pub mod task_00485;
 pub mod task_00492;
 pub mod task_00495;
