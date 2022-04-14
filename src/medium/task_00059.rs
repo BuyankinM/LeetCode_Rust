@@ -5,32 +5,34 @@ use crate::Solution;
 
 impl Solution {
     pub fn generate_matrix(n: i32) -> Vec<Vec<i32>> {
-        let mut matrix = vec![vec![0; n as usize]; n as usize];
-        let (mut left, mut right, mut top, mut bottom) = (0, n as usize, 0, n as usize);
-
+        let nu = n as usize;
+        let mut matrix = vec![vec![0; nu]; nu];
+        let (mut left, mut right, mut top, mut bottom) = (0, nu, 0, nu);
         let mut num = 1;
 
-        let set_val = |i: usize, j: usize, num: &mut i32, matrix: &mut Vec<Vec<i32>>| {
-            matrix[i][j] = *num;
-            *num += 1;
-        };
-
         while num <= n * n {
-            (left..right).for_each(|i| set_val(top, i, &mut num, &mut matrix));
+            (left..right).for_each(|i| {
+                matrix[top][i] = num;
+                num += 1;
+            });
             top += 1;
 
-            (top..bottom).for_each(|i| set_val(i, right - 1, &mut num, &mut matrix));
+            (top..bottom).for_each(|i| {
+                matrix[i][right - 1] = num;
+                num += 1;
+            });
             right -= 1;
 
-            (left..right)
-                .rev()
-                .for_each(|i| set_val(bottom - 1, i, &mut num, &mut matrix));
+            (left..right).rev().for_each(|i| {
+                matrix[bottom - 1][i] = num;
+                num += 1;
+            });
             bottom -= 1;
 
-            (top..bottom)
-                .rev()
-                .for_each(|i| set_val(i, left, &mut num, &mut matrix));
-
+            (top..bottom).rev().for_each(|i| {
+                matrix[i][left] = num;
+                num += 1;
+            });
             left += 1;
         }
         matrix
