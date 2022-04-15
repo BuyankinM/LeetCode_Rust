@@ -33,6 +33,7 @@ pub mod task_00290;
 pub mod task_00338;
 pub mod task_00344;
 pub mod task_00374;
+pub mod task_00387;
 pub mod task_00389;
 pub mod task_00392;
 pub mod task_00401;
