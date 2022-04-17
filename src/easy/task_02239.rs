@@ -16,6 +16,16 @@ impl Solution {
             })
             .0
     }
+
+    pub fn find_closest_number_short(nums: Vec<i32>) -> i32 {
+        use std::cmp::Ordering;
+        nums.into_iter()
+            .max_by(|x, y| match y.abs().cmp(&(x.abs())) {
+                Ordering::Equal => x.cmp(y),
+                abs_cmp => abs_cmp,
+            })
+            .unwrap()
+    }
 }
 
 #[cfg(test)]
