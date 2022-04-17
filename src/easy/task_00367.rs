@@ -41,10 +41,13 @@ impl Solution {
 
     // https://leetcode.com/problems/valid-perfect-square/discuss/735543/Rust-Solutions
     pub fn is_perfect_square_newton(num: i32) -> bool {
-        let mut i = num;
+        let mut i = num as i64;
+        let num = num as i64;
+
         while i > num / i {
             i = (i + num / i) / 2;
         }
+
         i * i == num
     }
 }

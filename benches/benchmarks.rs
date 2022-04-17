@@ -10,44 +10,6 @@ use leet_code::Solution;
 // }
 // criterion_group!(benches, criterion_benchmark);
 
-//// Group from 2 functions and range of input
-// fn criterion_benchmark_2(c: &mut Criterion) {
-//     let mut group = c.benchmark_group("1365. How Many Numbers Are Smaller Than the Current Number");
-//     for i in [100, 250, 1000].iter() {
-//         let v = (0..=100).cycle().take(*i as usize).collect::<Vec<i32>>();
-
-//         group.bench_with_input(BenchmarkId::new("Binary search", i), &v, |b, v| {
-//             b.iter(|| Solution::smaller_numbers_than_current(v.clone()))
-//         });
-
-//         group.bench_with_input(BenchmarkId::new("HashMap", i), &v, |b, v| {
-//             b.iter(|| Solution::smaller_numbers_than_current_hashmap(v.clone()))
-//         });
-
-//         group.bench_with_input(BenchmarkId::new("Running sum", i), &v, |b, v| {
-//             b.iter(|| Solution::smaller_numbers_than_current_running_sum(v.clone()))
-//         });
-//     }
-//     group.finish();
-// }
-
-// Group from 2 functions and range of input
-// fn criterion_benchmark_2(c: &mut Criterion) {
-//     let mut group = c.benchmark_group("1356. Sort Integers by The Number of 1 Bits");
-//     for i in [500, 1000, 10_000].iter() {
-//         let v = (0..=*i).collect::<Vec<i32>>();
-
-//         group.bench_with_input(BenchmarkId::new("Sort with cmp and then", i), &v, |b, v| {
-//             b.iter(|| Solution::sort_by_bits(v.clone()))
-//         });
-
-//         group.bench_with_input(BenchmarkId::new("Sort with tuple", i), &v, |b, v| {
-//             b.iter(|| Solution::sort_by_bits(v.clone()))
-//         });
-//     }
-//     group.finish();
-// }
-
 // fn criterion_benchmark_2(c: &mut Criterion) {
 //     use rand::{distributions::Uniform, Rng};
 
@@ -92,17 +54,22 @@ use leet_code::Solution;
 // }
 
 fn criterion_benchmark_2(c: &mut Criterion) {
-    let mut group = c.benchmark_group("2027. Minimum Moves to Convert String");
-    for &i in [1000, 5000, 10000].iter() {
-        let l = 4 * i;
-        let s = "XXOX".repeat(i as usize);
-
-        group.bench_with_input(BenchmarkId::new("Into_Bytes", &l), &s, |b, s| {
-            b.iter(|| Solution::minimum_moves(s.clone()))
+    let mut group = c.benchmark_group("367. Valid Perfect Square");
+    for i in [100, 250_000, 808_201, 2_147_483_647].iter() {
+        group.bench_with_input(BenchmarkId::new("Binary search", i), i, |b, i| {
+            b.iter(|| Solution::is_perfect_square(*i))
         });
 
-        group.bench_with_input(BenchmarkId::new("Chars", &l), &s, |b, s| {
-            b.iter(|| Solution::minimum_moves_chars(s.clone()))
+        group.bench_with_input(BenchmarkId::new("Functional (SQRT(N))", i), i, |b, i| {
+            b.iter(|| Solution::is_perfect_square_func(*i))
+        });
+
+        group.bench_with_input(BenchmarkId::new("Sum of 1_3_5_7", i), i, |b, i| {
+            b.iter(|| Solution::is_perfect_square_1357(*i))
+        });
+
+        group.bench_with_input(BenchmarkId::new("Newton method", i), i, |b, i| {
+            b.iter(|| Solution::is_perfect_square_newton(*i))
         });
     }
     group.finish();
