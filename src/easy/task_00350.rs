@@ -46,7 +46,7 @@ mod tests {
     fn test_3() {
         assert_eq!(
             Solution::intersect(vec![1, 2, 2, 1], vec![2, 2, 1]),
-            vec![2, 2, 1]
+            vec![1, 2, 2]
         );
     }
 }
