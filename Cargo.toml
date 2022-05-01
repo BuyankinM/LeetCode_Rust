@@ -1,6 +1,6 @@
 [package]
 name = "leet_code"
-version = "0.8.0"
+version = "0.8.5"
 authors = ["mbuyankin"]
 edition = "2021"
 
