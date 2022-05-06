@@ -10,7 +10,9 @@ impl Solution {
         nums.iter().for_each(|&x| {
             let e = map.entry(x).or_insert(0);
             match *e {
-                0 => *map.entry(k - x).or_insert(0) += 1,
+                0 => {
+                    map.entry(k - x).and_modify(|x| *x += 1).or_insert(1);
+                }
                 _ => {
                     *e -= 1;
                     count += 1;
