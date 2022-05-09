@@ -28,3 +28,42 @@ impl Solution {
         res
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_1() {
+        assert_eq!(
+            Solution::letter_combinations("23".to_string()),
+            vec![
+                "ad".to_string(),
+                "ae".to_string(),
+                "af".to_string(),
+                "bd".to_string(),
+                "be".to_string(),
+                "bf".to_string(),
+                "cd".to_string(),
+                "ce".to_string(),
+                "cf".to_string()
+            ]
+        );
+    }
+
+    #[test]
+    fn test_2() {
+        assert_eq!(
+            Solution::letter_combinations("".to_string()),
+            Vec::<String>::new()
+        );
+    }
+
+    #[test]
+    fn test_3() {
+        assert_eq!(
+            Solution::letter_combinations("2".to_string()),
+            vec!["a".to_string(), "b".to_string(), "c".to_string()]
+        );
+    }
+}
