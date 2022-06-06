@@ -33,7 +33,7 @@ impl Solution {
         set_comb.into_iter().collect()
     }
 
-    // aka_npou 
+    // aka_npou
     pub fn permute_unique_opt(nums: Vec<i32>) -> Vec<Vec<i32>> {
         use std::collections::HashSet;
 

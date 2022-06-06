@@ -43,4 +43,3 @@ mod tests {
         assert!(!Solution::is_ugly(999));
     }
 }
-

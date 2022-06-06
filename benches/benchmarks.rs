@@ -75,7 +75,7 @@ fn criterion_benchmark_task_0367(c: &mut Criterion) {
 
 pub fn criterion_benchmark_task_1091(c: &mut Criterion) {
     let mut group = c.benchmark_group("1091. Shortest Path in Binary Matrix");
-    
+
     for i in [50, 100, 200].iter() {
         let n = *i as usize;
         let v = vec![vec![0; n]; n];
@@ -83,7 +83,7 @@ pub fn criterion_benchmark_task_1091(c: &mut Criterion) {
             b.iter(|| Solution::shortest_path_binary_matrix(v.clone()))
         });
     }
-    
+
     group.finish();
 }
 

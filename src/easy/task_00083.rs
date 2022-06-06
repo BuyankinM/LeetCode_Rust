@@ -37,7 +37,6 @@ impl Solution {
         let mut curr_opt = head.as_mut();
 
         while let Some(curr) = curr_opt {
-
             let mut next_opt = curr.next.take();
             while let Some(next) = next_opt.as_mut() {
                 match next.val == curr.val {
