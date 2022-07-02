@@ -13,14 +13,14 @@ impl Solution {
 
         let mut res = Vec::with_capacity(l);
         let mut start = match k.signum() {
-            -1 => l - k.abs() as usize,
+            -1 => l - k.unsigned_abs() as usize,
             1 => 1,
             _ => 0,
         };
 
         for _ in 0..l {
             let mut s = 0;
-            for j in start..(start + k.abs() as usize) {
+            for j in start..(start + k.unsigned_abs() as usize) {
                 s += code[j % l];
             }
             res.push(s);

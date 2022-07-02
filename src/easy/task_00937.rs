@@ -16,10 +16,7 @@ impl Solution {
             .iter()
             .enumerate()
             .map(|(i, s)| {
-                let mut parts = s.splitn(2, ' ');
-                let id = parts.next().unwrap();
-                let content = parts.next().unwrap();
-
+                let (id, content) = s.split_once(' ').unwrap();
                 let flag_let_dig = match content.chars().next() {
                     Some(c) if c.is_alphabetic() => 0,
                     _ => i + 1,
