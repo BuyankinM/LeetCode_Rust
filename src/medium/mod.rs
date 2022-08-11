@@ -8,6 +8,7 @@ pub mod task_00059;
 pub mod task_00063;
 pub mod task_00075;
 pub mod task_00079;
+pub mod task_00098;
 pub mod task_00120;
 pub mod task_00128;
 pub mod task_00129;
