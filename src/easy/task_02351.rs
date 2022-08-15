@@ -30,4 +30,4 @@ mod tests {
     fn test_2() {
         assert_eq!(Solution::repeated_character("abcdd".to_string()), 'd');
     }
- }
+}
