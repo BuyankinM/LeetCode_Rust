@@ -31,6 +31,33 @@ impl Solution {
         }
         true
     }
+
+    // https://leetcode.com/problems/split-array-into-consecutive-subsequences/discuss/2448900/Rust-or-100-Faster-or-100-Less-Memory-or-BinaryHeap-Reverse
+    pub fn is_possible_heap(nums: Vec<i32>) -> bool {
+        use std::cmp::Reverse;
+
+        let mut heap = std::collections::BinaryHeap::new();
+
+        for n in nums {
+            while let Some(Reverse((e, c))) = heap.pop() {
+                if e + 1 == n {
+                    heap.push(Reverse((n, c + 1)));
+                    break;
+                } else if e == n {
+                    heap.push(Reverse((e, c)));
+                    heap.push(Reverse((n, 1)));
+                    break;
+                } else if c < 3 {
+                    return false;
+                }
+            }
+
+            if heap.is_empty() {
+                heap.push(Reverse((n, 1)));
+            }
+        }
+        heap.iter().all(|Reverse((_, c))| *c >= 3)
+    }
 }
 
 #[cfg(test)]
@@ -50,5 +77,10 @@ mod tests {
     #[test]
     fn test_3() {
         assert!(!Solution::is_possible(vec![1, 2, 3, 4, 4, 5]));
+    }
+
+    #[test]
+    fn test_4() {
+        assert!(Solution::is_possible_heap(vec![1, 2, 3, 3, 4, 4, 5, 5]));
     }
 }
