@@ -28,3 +28,27 @@ impl Solution {
             .collect()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_1() {
+        assert_eq!(
+            Solution::shifting_letters(
+                "abc".to_string(),
+                vec![vec![0, 1, 0], vec![1, 2, 1], vec![0, 2, 1]]
+            ),
+            "ace".to_string()
+        );
+    }
+
+    #[test]
+    fn test_2() {
+        assert_eq!(
+            Solution::shifting_letters("dztz".to_string(), vec![vec![0, 0, 0], vec![1, 1, 1]]),
+            "catz".to_string()
+        );
+    }
+}
