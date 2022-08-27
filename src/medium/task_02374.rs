@@ -16,7 +16,7 @@ impl Solution {
                 (new_val, false) => (over_num, new_val),
                 (new_val, true) => (over_num + 1, new_val),
             };
-            
+
             if *elem > max_val {
                 max_val = *elem;
             }
