@@ -22,12 +22,13 @@ impl TreeNode {
 
 use crate::Solution;
 use std::cell::RefCell;
+use std::collections::VecDeque;
 use std::rc::Rc;
 
 impl Solution {
     pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
         let mut res = Vec::new();
-        let mut q = std::collections::VecDeque::new();
+        let mut q = VecDeque::new();
         q.push_back(root);
 
         while !q.is_empty() {
@@ -46,6 +47,29 @@ impl Solution {
             }
         }
         res
+    }
+
+    // https://leetcode.com/problems/average-of-levels-in-binary-tree/discuss/2517749/Rust-or-BFS-or-With-Comments
+    pub fn average_of_levels_flatten(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
+        use std::iter::once;
+
+        let mut q: VecDeque<_> = once(root).flatten().collect();
+        let mut rez = vec![];
+        while !q.is_empty() {
+            let (mut sum, n) = (0.0, q.len());
+            for _ in 0..n {
+                let node_rc = q.pop_front().unwrap();
+                let mut node_ref = node_rc.borrow_mut();
+                sum += node_ref.val as f64;
+                q.extend(
+                    once(node_ref.left.take())
+                        .chain(once(node_ref.right.take()))
+                        .flatten(),
+                );
+            }
+            rez.push(sum / (n as f64));
+        }
+        rez
     }
 }
 
