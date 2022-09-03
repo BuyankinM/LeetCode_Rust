@@ -448,4 +448,5 @@ pub mod task_02373;
 pub mod task_02379;
 pub mod task_02383;
 pub mod task_02389;
+pub mod task_02395;
 pub mod task_05817;
