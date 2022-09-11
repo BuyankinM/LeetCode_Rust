@@ -35,6 +35,26 @@ impl Solution {
             .filter(|pair| pair[1] < max_defs[pair[0] as usize + 1])
             .count() as _
     }
+
+    // https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/discuss/2552715/Rust-solutions/1594842
+    pub fn number_of_weak_characters_optimal(properties: Vec<Vec<i32>>) -> i32 {
+        let mut max_defs = [0; 100_002];
+
+        let mut it = properties.iter();
+        while let Some(&[attack, defense]) = it.next().map(|pair| pair.as_slice()) {
+            max_defs[attack as usize] = max_defs[attack as usize].max(defense);
+        }
+
+        max_defs.iter_mut().rev().fold(0, |max, def| {
+            *def = max.max(*def);
+            *def
+        });
+
+        properties
+            .iter()
+            .filter(|pair| pair[1] < max_defs[pair[0] as usize + 1])
+            .count() as _
+    }
 }
 
 #[cfg(test)]
