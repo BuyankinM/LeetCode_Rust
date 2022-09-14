@@ -34,6 +34,16 @@ impl Solution {
         }
         rez
     }
+    
+    // https://leetcode.com/problems/optimal-partition-of-string/discuss/2560220/Rust-or-Greedy-or-With-Comments
+    pub fn partition_string_fold(s: String) -> i32 {
+        s.bytes()
+            .fold((1, 0), |(rez, arr), b| match 1 << (b - b'a') {
+                bit if arr & bit == bit => (rez + 1, bit),
+                bit => (rez, arr | bit),
+            })
+            .0
+    }
 
     // https://leetcode.com/problems/optimal-partition-of-string/discuss/2562947/Rust-0-ms-two-solutions-(with-detailed-comments)
     pub fn partition_string_functional(s: String) -> i32 {
