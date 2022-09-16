@@ -58,4 +58,38 @@ impl Solution {
         rez.extend(std::iter::repeat(0).take(hist[0] / 2));
         rez
     }
+
+    // https://leetcode.com/problems/find-original-array-from-doubled-array/discuss/2579839/Rust-idiomatic-solution-100-runtime-100-(O(1))-memory
+    pub fn find_original_array_slow_fast_pointers(changed: Vec<i32>) -> Vec<i32> {
+        Self::f(changed).unwrap_or_default()
+    }
+
+    fn f(mut changed: Vec<i32>) -> Option<Vec<i32>> {
+        changed.sort_unstable();
+
+        let mut slow = 0;
+        let mut fast = 1;
+
+        while fast < changed.len() {
+            let v = *changed.get(slow)?;
+            slow += 1;
+
+            if v == -1 {
+                continue;
+            }
+
+            fast = fast.max(slow);
+            fast += changed[fast..].iter().position(|n| *n == v * 2)?;
+
+            changed[fast] = -1;
+            fast += 1;
+        }
+
+        if changed.iter().skip(slow).any(|n| *n != -1) {
+            return None;
+        }
+
+        changed.retain(|n| *n != -1);
+        Some(changed)
+    }
 }
