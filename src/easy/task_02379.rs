@@ -42,6 +42,7 @@ mod tests {
     fn test_2() {
         assert_eq!(Solution::minimum_recolors("WBWBBBW".to_string(), 2), 0);
     }
+
     #[test]
     fn test_3() {
         assert_eq!(Solution::minimum_recolors("BWWWBB".to_string(), 6), 3);
