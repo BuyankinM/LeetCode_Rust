@@ -47,12 +47,9 @@ impl Solution {
     pub fn find_duplicate_medium_609_optimal(paths: Vec<String>) -> Vec<Vec<String>> {
         let mut map = HashMap::<&str, Vec<(&str, &str)>>::new();
         for entry in &paths {
-            let mut entry_parts = entry.split(' ');
+            let mut entry_parts = entry.split(&[' ', '(', ')']).filter(|s| !s.is_empty());
             let path = entry_parts.next().unwrap();
-            for file in entry_parts {
-                let mut file_parts = file.split('(');
-                let (name, content) = (file_parts.next().unwrap(), file_parts.next().unwrap());
-                let content = &content[..content.len() - 1];
+            while let (Some(name), Some(content)) = (entry_parts.next(), entry_parts.next()) {
                 map.entry(content).or_default().push((path, name));
             }
         }

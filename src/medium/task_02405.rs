@@ -34,7 +34,7 @@ impl Solution {
         }
         rez
     }
-    
+
     // https://leetcode.com/problems/optimal-partition-of-string/discuss/2560220/Rust-or-Greedy-or-With-Comments
     pub fn partition_string_fold(s: String) -> i32 {
         s.bytes()
