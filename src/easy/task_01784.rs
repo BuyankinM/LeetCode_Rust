@@ -5,7 +5,7 @@ use crate::Solution;
 
 impl Solution {
     pub fn check_ones_segment(s: String) -> bool {
-        (&s).split('0').filter(|x| !x.is_empty()).count() == 1
+        s.split('0').filter(|x| !x.is_empty()).count() == 1
     }
 }
 

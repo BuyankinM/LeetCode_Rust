@@ -7,8 +7,7 @@ impl Solution {
     pub fn num_different_integers(word: String) -> i32 {
         use std::collections::HashSet;
 
-        (&word)
-            .split(char::is_alphabetic)
+        word.split(char::is_alphabetic)
             .filter(|s| !s.is_empty())
             .map(|x| x.trim_start_matches('0'))
             .collect::<HashSet<&str>>()

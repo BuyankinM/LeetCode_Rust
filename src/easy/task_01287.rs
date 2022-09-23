@@ -51,8 +51,8 @@ impl Solution {
                 };
             }
             match first {
-                true => (high + 1),
-                false => (low - 1),
+                true => high + 1,
+                false => low - 1,
             }
         }
 

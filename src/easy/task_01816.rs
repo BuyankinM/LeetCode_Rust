@@ -5,7 +5,7 @@ use crate::Solution;
 
 impl Solution {
     pub fn truncate_sentence(s: String, k: i32) -> String {
-        (&s).splitn((k + 1) as usize, ' ')
+        s.splitn((k + 1) as usize, ' ')
             .take(k as usize)
             .collect::<Vec<&str>>()
             .join(" ")
