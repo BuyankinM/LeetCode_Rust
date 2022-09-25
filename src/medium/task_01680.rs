@@ -3,10 +3,13 @@
 
 use crate::Solution;
 
+type SumType = i64;
+const MOD: SumType = 1_000_000_007;
+
 impl Solution {
     pub fn concatenated_binary(n: i32) -> i32 {
         (1..=n).fold(0_i64, |res, num| {
-            (res << (32 - num.leading_zeros())) % 1_000_000_007 + num as i64
+            ((res << (32 - num.leading_zeros())) + num as i64) % 1_000_000_007
         }) as _
     }
 
@@ -21,6 +24,13 @@ impl Solution {
             }
         }
         res
+    }
+
+    // https://leetcode.com/problems/concatenation-of-consecutive-binary-numbers/discuss/2613227/rust-one-liner-with-comments
+    pub fn concatenated_binary_reduce(n: i32) -> i32 {
+        (1..=n as SumType)
+            .reduce(|acc, num| ((acc << (SumType::BITS - num.leading_zeros())) | num) % MOD)
+            .unwrap() as _
     }
 }
 
