@@ -42,10 +42,8 @@ impl Solution {
         while let Some((Some(rc_node), d)) = stack.pop() {
             let mut node = rc_node.borrow_mut();
             if d == depth - 1 {
-                let left = node.left.take();
-                let right = node.right.take();
-                node.left = new_node(left, None, val);
-                node.right = new_node(None, right, val);
+                node.left = new_node(node.left.take(), None, val);
+                node.right = new_node(None, node.right.take(), val);
             } else {
                 if node.left.is_some() {
                     stack.push((node.left.clone(), d + 1));
