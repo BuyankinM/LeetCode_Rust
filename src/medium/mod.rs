@@ -123,6 +123,7 @@ pub mod task_02415;
 pub mod task_02420;
 pub mod task_02433;
 pub mod task_02434;
+pub mod task_02438;
 pub mod task_02439;
 pub mod task_02442;
 pub mod task_02443;
