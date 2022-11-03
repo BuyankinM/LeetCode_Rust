@@ -38,7 +38,7 @@ impl Solution {
         let (mut n, mut count) = (0, 1 << k);
         let mask = (1 << k) - 1;
         for (i, &b) in s.as_bytes().iter().enumerate() {
-            n = ((n << 1) & mask) + if b == b'1' { 1 } else { 0 };
+            n = ((n << 1) & mask) + usize::from(b == b'1');
             if i + 1 < k || v[n] {
                 continue;
             }

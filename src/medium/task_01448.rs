@@ -48,9 +48,7 @@ impl Solution {
             if let Some(n) = node {
                 let val = n.borrow().val;
                 let m = Some(max.map_or(val, |m| m.max(val)));
-                (if m == Some(val) { 1 } else { 0 })
-                    + dfs(&n.borrow().left, m)
-                    + dfs(&n.borrow().right, m)
+                (m == Some(val)) as i32 + dfs(&n.borrow().left, m) + dfs(&n.borrow().right, m)
             } else {
                 0
             }

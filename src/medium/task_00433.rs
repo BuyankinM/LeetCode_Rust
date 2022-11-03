@@ -48,12 +48,9 @@ impl Solution {
                 }
                 let mut i = 0;
                 while i < bank.len() {
-                    if dist(&curr, &bank[i]) == 1 {
-                        let n = bank.len() - 1;
-                        bank.swap(i, n);
-                        q.push_back(bank.pop().unwrap());
-                    } else {
-                        i += 1;
+                    match dist(&curr, &bank[i]) {
+                        1 => q.push_back(bank.swap_remove(i)),
+                        _ => i += 1,
                     }
                 }
             }

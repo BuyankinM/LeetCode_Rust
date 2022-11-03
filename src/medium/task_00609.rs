@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 impl Solution {
     pub fn find_duplicate_medium_609(paths: Vec<String>) -> Vec<Vec<String>> {
-        let mut hm = HashMap::with_capacity(paths.len());
+        let mut hm: HashMap<&str, Vec<String>> = HashMap::with_capacity(paths.len());
         for path in paths.iter() {
             let pos_sep = path.find(' ').unwrap();
             let dir = &path[..pos_sep];
@@ -15,10 +15,7 @@ impl Solution {
                 let mut file_it = name_cont.split(&['(', ')'][..]);
                 let name = file_it.next().unwrap();
                 let content = file_it.next().unwrap();
-
-                hm.entry(content)
-                    .or_insert(vec![])
-                    .push(format!("{dir}/{name}"));
+                hm.entry(content).or_default().push(format!("{dir}/{name}"));
             }
         }
 

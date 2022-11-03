@@ -27,7 +27,7 @@ impl Solution {
             }
             let sum_dig = dig_num.max(0) + dig_k.max(0) + carry;
             q.push_front(sum_dig % 10);
-            carry = if sum_dig >= 10 { 1 } else { 0 };
+            carry = (sum_dig >= 10) as i32;
         }
 
         if carry > 0 {
