@@ -65,7 +65,7 @@ impl Solution {
             if ch == c {
                 prev = i as i32;
             }
-            dist[i] = (i as i32 - prev) as i32;
+            dist[i] = i as i32 - prev;
         }
 
         prev = i32::MAX;

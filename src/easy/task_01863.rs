@@ -10,10 +10,10 @@ impl Solution {
 
         for comb in 1..1 << l {
             let mut val_xor = 0;
-            for i in 0..l {
+            for (i, &x) in nums.iter().enumerate().take(l) {
                 let mask = 1 << i;
                 if comb & mask != 0 {
-                    val_xor ^= nums[i as usize];
+                    val_xor ^= x;
                 }
             }
             res += val_xor;

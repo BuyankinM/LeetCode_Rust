@@ -8,7 +8,7 @@ impl Solution {
         fn make_roman_part(res: &mut String, n: usize, d: &str, f: &str, t: &str) {
             match n {
                 0 => {}
-                1..=3 => *res += &d.repeat(n as usize),
+                1..=3 => *res += &d.repeat(n),
                 4 => {
                     *res += d;
                     *res += f
@@ -16,7 +16,7 @@ impl Solution {
                 5 => *res += f,
                 6..=8 => {
                     *res += f;
-                    *res += &d.repeat((n - 5) as usize)
+                    *res += &d.repeat(n - 5)
                 }
                 9 => {
                     *res += d;

@@ -18,10 +18,10 @@ impl Solution {
 
         (0..rows).for_each(|r| {
             points.push_back((r as i32, 0, 1));
-            path[r as usize][0] = 1;
+            path[r][0] = 1;
 
             points.push_back((r as i32, (cols - 1) as i32, 2));
-            path[r as usize][cols - 1] = 2;
+            path[r][cols - 1] = 2;
         });
 
         (0..cols).for_each(|c| {

@@ -87,7 +87,7 @@ impl Solution {
             //     unique letter to the paper and push all encountered
             //     characters (before the last instance) to the stack
             if lp <= pos {
-                bytes[lp..=pos as usize].iter().for_each(|&c| {
+                bytes[lp..=pos].iter().for_each(|&c| {
                     if c == ch {
                         paper.push(c);
                     } else {

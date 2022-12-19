@@ -11,7 +11,7 @@ impl Solution {
             .last();
         match max_odd_ind {
             None => "",
-            Some((ind, _)) => &num[..=ind as usize],
+            Some((ind, _)) => &num[..=ind],
         }
         .to_string()
     }

@@ -15,7 +15,7 @@ impl Solution {
                 while k > 0 {
                     let x = heap.pop().unwrap();
                     let next = *heap.peek().unwrap();
-                    let delta = 1.max(x - next).min(k);
+                    let delta = 1.clamp(x - next, k);
                     heap.push(x - delta);
                     k -= delta;
                 }

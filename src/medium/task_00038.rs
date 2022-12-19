@@ -43,7 +43,7 @@ impl Solution {
             let mut slow = 0;
             for fast in 0..=curr.len() {
                 if fast == curr.len() || curr[slow] != curr[fast] {
-                    next.extend(once((fast - slow) as u8).chain(once(curr[slow] as u8)));
+                    next.extend(once((fast - slow) as u8).chain(once(curr[slow])));
                     slow = fast;
                 }
             }
