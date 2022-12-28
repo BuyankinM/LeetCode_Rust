@@ -13,6 +13,25 @@ impl Solution {
         });
         heap.into_iter().sum()
     }
+
+    // https://leetcode.com/problems/remove-stones-to-minimize-the-total/solutions/2960645/rust-elixir-2-approaches/?orderBy=most_relevant
+    pub fn min_stone_sum_counter(piles: Vec<i32>, mut k: i32) -> i32 {
+        let max = *piles.iter().max().unwrap() as usize;
+        let mut count = vec![0; max + 1];
+        for &x in piles.iter() {
+            count[x as usize] += 1;
+        }
+        for i in (1..=max).rev() {
+            if k == 0 {
+                break;
+            }
+            let smaller = count[i].min(k);
+            count[i] -= smaller;
+            count[(i + 1) / 2] += smaller;
+            k -= smaller;
+        }
+        count.iter().enumerate().map(|(i, c)| i as i32 * c).sum()
+    }
 }
 
 #[cfg(test)]
