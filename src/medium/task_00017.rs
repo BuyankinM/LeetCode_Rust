@@ -11,7 +11,7 @@ impl Solution {
                 false => {
                     let letters = phone[(next_digits.as_bytes()[0] - b'2') as usize];
                     letters.chars().for_each(|c| {
-                        backtrack(res, phone, format!("{}{}", comb, c), &next_digits[1..])
+                        backtrack(res, phone, format!("{comb}{c}"), &next_digits[1..])
                     })
                 }
             }

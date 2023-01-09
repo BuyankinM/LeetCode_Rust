@@ -14,7 +14,7 @@ impl Solution {
     }
 
     pub fn concatenated_binary_slow(n: i32) -> i32 {
-        let masks = (0..32).into_iter().map(|x| 1 << x).collect::<Vec<_>>();
+        let masks = (0..32).map(|x| 1 << x).collect::<Vec<_>>();
         let mut res = 0;
 
         for num in 1..=n {

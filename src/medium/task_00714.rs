@@ -16,7 +16,7 @@ impl Solution {
         for price in prices.iter().skip(1) {
             cash = max(cash, hold + price - fee);
             hold = max(hold, cash - price);
-            println!("price = {},  cash = {:2},  hold = {:2}", price, cash, hold);
+            println!("price = {price},  cash = {cash:2},  hold = {hold:2}");
         }
 
         cash

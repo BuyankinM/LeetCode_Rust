@@ -13,8 +13,8 @@ impl Solution {
 
         let get_str_range = |start: i32, end: i32| -> String {
             match start == end {
-                true => format!("{}", start),
-                false => format!("{}->{}", start, end),
+                true => format!("{start}"),
+                false => format!("{start}->{end}"),
             }
         };
 

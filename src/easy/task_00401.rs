@@ -10,7 +10,7 @@ impl Solution {
         for i in 0i32..12 {
             for j in 0i32..60 {
                 if (i.count_ones() + j.count_ones()) == nu {
-                    result.push(format!("{}:{:02}", i, j));
+                    result.push(format!("{i}:{j:02}"));
                 }
             }
         }
@@ -22,7 +22,7 @@ impl Solution {
             .map(|n| (n.count_ones() as i32, n >> 6, n & 0b111111))
             .filter_map(|(count, h, m)| {
                 if count == turned_on && h < 12 && m < 60 {
-                    Some(format!("{}:{:02}", h, m))
+                    Some(format!("{h}:{m:02}"))
                 } else {
                     None
                 }

@@ -35,7 +35,7 @@ impl Solution {
 
         let chars: HashSet<char> = s.chars().collect();
 
-        for (i, c) in s.chars().into_iter().enumerate() {
+        for (i, c) in s.chars().enumerate() {
             if chars.contains(&c.to_ascii_lowercase()) && chars.contains(&c.to_ascii_uppercase()) {
                 continue;
             }
