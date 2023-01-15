@@ -25,6 +25,7 @@ mod tests {
     fn test_2() {
         assert_eq!(3, Solution::maximum_count(vec![-3, -2, -1, 0, 0, 1, 2]));
     }
+    
     #[test]
     fn test_3() {
         assert_eq!(4, Solution::maximum_count(vec![5, 20, 66, 1314]));
