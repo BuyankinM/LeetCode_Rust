@@ -18,8 +18,7 @@ impl Solution {
         for word in words.iter() {
             let mut node = &mut trie;
             for c in word.as_bytes() {
-                node =
-                    node.children[(c - b'a') as usize].get_or_insert(Box::default());
+                node = node.children[(c - b'a') as usize].get_or_insert(Box::default());
             }
             node.word = Some(word.clone());
         }
