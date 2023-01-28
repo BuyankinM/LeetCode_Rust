@@ -4,7 +4,7 @@
 use crate::Solution;
 
 impl Solution {
-    pub fn max_score(s: String) -> i32 {
+    pub fn max_score_1422(s: String) -> i32 {
         let l = s.len();
         let mut sum_ones = s.chars().filter(|&c| c == '1').count();
 
@@ -31,26 +31,26 @@ mod tests {
 
     #[test]
     fn test_1() {
-        assert_eq!(5, Solution::max_score("011101".to_owned()));
+        assert_eq!(5, Solution::max_score_1422("011101".to_owned()));
     }
 
     #[test]
     fn test_2() {
-        assert_eq!(5, Solution::max_score("00111".to_owned()));
+        assert_eq!(5, Solution::max_score_1422("00111".to_owned()));
     }
 
     #[test]
     fn test_3() {
-        assert_eq!(3, Solution::max_score("1111".to_owned()));
+        assert_eq!(3, Solution::max_score_1422("1111".to_owned()));
     }
 
     #[test]
     fn test_4() {
-        assert_eq!(2, Solution::max_score("01".to_owned()));
+        assert_eq!(2, Solution::max_score_1422("01".to_owned()));
     }
 
     #[test]
     fn test_5() {
-        assert_eq!(1, Solution::max_score("00".to_owned()));
+        assert_eq!(1, Solution::max_score_1422("00".to_owned()));
     }
 }

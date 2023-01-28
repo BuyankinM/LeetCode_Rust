@@ -87,6 +87,38 @@
 //     group.finish();
 // }
 
-// criterion_group!(benches, criterion_benchmark_task_1091);
+// fn criterion_benchmark_task_2542(c: &mut Criterion) {
+//     use rand::{distributions::Uniform, Rng};
+
+//     let range = Uniform::from(0..100_000);
+
+//     let nums1 = rand::thread_rng()
+//         .sample_iter(&range)
+//         .take(100_000)
+//         .collect::<Vec<i32>>();
+
+//     let nums2 = rand::thread_rng()
+//         .sample_iter(&range)
+//         .take(100_000)
+//         .collect::<Vec<i32>>();
+
+//     let mut group = c.benchmark_group("2542. Maximum Subsequence Score");
+//     for &i in [1000, 10_000, 90_000].iter() {
+//         let n1 = nums1.iter().take(i).cloned().collect::<Vec<i32>>();
+//         let n2 = nums2.iter().take(i).cloned().collect::<Vec<i32>>();
+//         let k = 1000;
+
+//         group.bench_with_input(BenchmarkId::new("Before optimization", i), &k, |b, &k| {
+//             b.iter(|| Solution::max_score_2542_opt(n1.clone(), n2.clone(), k))
+//         });
+
+//         group.bench_with_input(BenchmarkId::new("After optimization", i), &k, |b, &k| {
+//             b.iter(|| Solution::max_score_2542_opt_2(n1.clone(), n2.clone(), k))
+//         });
+//     }
+//     group.finish();
+// }
+
+// criterion_group!(benches, criterion_benchmark_task_2542);
 
 // criterion_main!(benches);
