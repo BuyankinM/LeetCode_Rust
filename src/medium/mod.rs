@@ -148,3 +148,4 @@ pub mod task_02531;
 pub mod task_02542;
 pub mod task_02545;
 pub mod task_02546;
+pub mod task_02550;
