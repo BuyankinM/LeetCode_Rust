@@ -39,6 +39,25 @@ impl Solution {
         pos += correct(chars, count, pos, prev_c);
         pos as _
     }
+
+    // https://leetcode.com/problems/string-compression/solutions/3247232/rust-two-pointers-with-comments/?orderBy=most_votes&languageTags=rust
+    pub fn compress_short(chars: &mut Vec<char>) -> i32 {
+        let (mut next, mut slow, n) = (0, 0, chars.len());
+        for fast in 1..=n {
+            if fast == n || chars[fast] != chars[slow] {
+                chars[next] = chars[slow];
+                next += 1;
+                if fast - slow > 1 {
+                    for c in (fast - slow).to_string().chars() {
+                        chars[next] = c;
+                        next += 1;
+                    }
+                }
+                slow = fast;
+            }
+        }
+        next as _
+    }
 }
 
 #[cfg(test)]
