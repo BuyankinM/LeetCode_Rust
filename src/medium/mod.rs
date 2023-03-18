@@ -100,6 +100,7 @@ pub mod task_01448;
 pub mod task_01457;
 pub mod task_01461;
 pub mod task_01465;
+pub mod task_01472;
 pub mod task_01578;
 pub mod task_01641;
 pub mod task_01647;
