@@ -1,4 +1,7 @@
 {
     "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs": true
+    "editor.guides.bracketPairs": true,
+    "rust-analyzer.linkedProjects": [
+        ".\\Cargo.toml"
+    ]
 }
