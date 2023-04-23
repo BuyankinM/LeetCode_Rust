@@ -36,7 +36,7 @@ mod tests {
             Solution::row_and_maximum_ones(vec![vec![0, 0, 0], vec![0, 1, 1]])
         );
     }
-    
+
     #[test]
     fn test_3() {
         assert_eq!(

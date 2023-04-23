@@ -16,8 +16,6 @@ impl Solution {
             }
         }
     }
-
-    
 }
 
 #[cfg(test)]
